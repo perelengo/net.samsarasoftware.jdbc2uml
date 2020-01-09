@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:database="http://www.samsarasoftware.net/database.profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.samsarasoftware.net/database.profile platform:/plugin/net.samsarasoftware.metamodels/profiles/database.profile.uml#_ZM-7EFc4EeeatsJTvGgPfw">
+<uml:Model xmi:id="jdbc2uml" name="Model">
+<packagedElement xmi:type="uml:Package" xmi:id="utils" name="utils"><packagedElement xmi:type="uml:Class" xmi:id="TimeDataType" name="Time"/><packagedElement xmi:type="uml:Class" xmi:id="TimestampDataType" name="TimeStamp"/><packagedElement xmi:type="uml:Class" xmi:id="DateDataType" name="Date"/><packagedElement xmi:type="uml:Class" xmi:id="BlobDataType" name="Blob"/><packagedElement xmi:type="uml:Class" xmi:id="ClobDataType" name="Clob"/></packagedElement><packagedElement xmi:type="uml:Package" xmi:id="unsupported" name="unsupported"><packagedElement xmi:type="uml:Class" xmi:id="ARRAY" name="ARRAY"/><packagedElement xmi:type="uml:Class" xmi:id="BINARY" name="BINARY"/><packagedElement xmi:type="uml:Class" xmi:id="DISTINCT" name="DISTINCT"/><packagedElement xmi:type="uml:Class" xmi:id="LONGVARBINARY" name="LONGVARBINARY"/><packagedElement xmi:type="uml:Class" xmi:id="NCLOB" name="NCLOB"/><packagedElement xmi:type="uml:Class" xmi:id="OTHER" name="OTHER"/><packagedElement xmi:type="uml:Class" xmi:id="REF" name="REF"/><packagedElement xmi:type="uml:Class" xmi:id="ROWID" name="ROWID"/><packagedElement xmi:type="uml:Class" xmi:id="TINYINT" name="TINYINT"/><packagedElement xmi:type="uml:Class" xmi:id="VARBINARY" name="VARBINARY"/></packagedElement><packagedElement xmi:type="uml:Component" xmi:id="subsystem" name="Subsystem"><nestedClassifier xmi:type="uml:Component" xmi:id="entities" name="Entities"><packagedElement xmi:type="uml:Package" xmi:id="ONLINESHOP" name="ONLINESHOP">
+<packagedElement xmi:type="uml:Class" xmi:id="ADDRESS" name="ADDRESS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_NUM" name="NUM" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_NUM_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_NUM_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_SUSER" name="SUSER" type="SUSER"  association="ADDRESS_SUSER_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_SUSER_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_SUSER_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_POSTALCODE" name="POSTALCODE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_POSTALCODE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_POSTALCODE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_FLOOR" name="FLOOR" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_FLOOR_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_FLOOR_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_OTHER" name="OTHER" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_OTHER_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_OTHER_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_CONTACTKIND" name="CONTACTKIND" type="CONTACTKIND"  association="ADDRESS_CONTACTKIND_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_CONTACTKIND_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_CONTACTKIND_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_DOOR" name="DOOR" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_DOOR_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_DOOR_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_VILLAGE" name="VILLAGE" type="VILLAGE"  association="ADDRESS_VILLAGE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_VILLAGE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_VILLAGE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ADDRESS_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_NAME_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ADDRESS_VILLAGE_FK" name="ADDRESS_VILLAGE_FK" memberEnd="ADDRESS_VILLAGE ADDRESS_VILLAGE_FK_VILLAGE" navigableOwnedEnd="ADDRESS_VILLAGE_FK_VILLAGE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ADDRESS_VILLAGE_FK_VILLAGE" name="ADDRESS" type="ADDRESS" association="ADDRESS_VILLAGE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_VILLAGE_FK_VILLAGE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_VILLAGE_FK_VILLAGE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ADDRESS_SUSER_FK" name="ADDRESS_SUSER_FK" memberEnd="ADDRESS_SUSER ADDRESS_SUSER_FK_SUSER" navigableOwnedEnd="ADDRESS_SUSER_FK_SUSER" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ADDRESS_SUSER_FK_SUSER" name="ADDRESS" type="ADDRESS" association="ADDRESS_SUSER_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_SUSER_FK_SUSER_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_SUSER_FK_SUSER_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ADDRESS_CONTACTKIND_FK" name="ADDRESS_CONTACTKIND_FK" memberEnd="ADDRESS_CONTACTKIND ADDRESS_CONTACTKIND_FK_CONTACTKIND" navigableOwnedEnd="ADDRESS_CONTACTKIND_FK_CONTACTKIND" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ADDRESS_CONTACTKIND_FK_CONTACTKIND" name="ADDRESS" type="ADDRESS" association="ADDRESS_CONTACTKIND_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ADDRESS_CONTACTKIND_FK_CONTACTKIND_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ADDRESS_CONTACTKIND_FK_CONTACTKIND_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="AREA" name="AREA">
+<ownedAttribute xmi:type="uml:Property" xmi:id="AREA_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AREA_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AREA_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AREA_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="AREA_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AREA_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AREA_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AREA_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AREA_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="AVAILABILITY" name="AVAILABILITY">
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITY_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITY_DISCOUNTPERCENT" name="DISCOUNTPERCENT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_DISCOUNTPERCENT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_DISCOUNTPERCENT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITY_DATETO" name="DATETO"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_DATETO_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_DATETO_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITY_PRODUCT" name="PRODUCT" type="PRODUCT"  association="AVAILABILITY_PRODUCT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_PRODUCT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_PRODUCT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITY_AVAILABILITYSTATUS" name="AVAILABILITYSTATUS" type="AVAILABILITYSTATUS"  association="AVAILABILITY_AVAILABILITYS_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_AVAILABILITYSTATUS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_AVAILABILITYSTATUS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITY_DATEFROM" name="DATEFROM"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_DATEFROM_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_DATEFROM_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="AVAILABILITY_PRODUCT_FK" name="AVAILABILITY_PRODUCT_FK" memberEnd="AVAILABILITY_PRODUCT AVAILABILITY_PRODUCT_FK_PRODUCT" navigableOwnedEnd="AVAILABILITY_PRODUCT_FK_PRODUCT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="AVAILABILITY_PRODUCT_FK_PRODUCT" name="AVAILABILITY" type="AVAILABILITY" association="AVAILABILITY_PRODUCT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_PRODUCT_FK_PRODUCT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_PRODUCT_FK_PRODUCT_upper" value="1" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="AVAILABILITY_AVAILABILITYS_FK" name="AVAILABILITY_AVAILABILITYS_FK" memberEnd="AVAILABILITY_AVAILABILITYSTATUS AVAILABILITY_AVAILABILITYS_FK_AVAILABILITYSTATUS" navigableOwnedEnd="AVAILABILITY_AVAILABILITYS_FK_AVAILABILITYSTATUS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="AVAILABILITY_AVAILABILITYS_FK_AVAILABILITYSTATUS" name="AVAILABILITY" type="AVAILABILITY" association="AVAILABILITY_AVAILABILITYS_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITY_AVAILABILITYS_FK_AVAILABILITYSTATUS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITY_AVAILABILITYS_FK_AVAILABILITYSTATUS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="AVAILABILITYSTATUS" name="AVAILABILITYSTATUS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITYSTATUS_LITERAL" name="LITERAL" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITYSTATUS_LITERAL_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITYSTATUS_LITERAL_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="AVAILABILITYSTATUS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="AVAILABILITYSTATUS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AVAILABILITYSTATUS_ID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BASE" name="BASE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BASE_AREA" name="AREA" type="AREA"  association="BASE_AREA_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BASE_AREA_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BASE_AREA_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BASE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BASE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BASE_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BASE_LONGITUDE" name="LONGITUDE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BASE_LONGITUDE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BASE_LONGITUDE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BASE_LATITUDE" name="LATITUDE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BASE_LATITUDE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BASE_LATITUDE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BASE_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BASE_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BASE_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BASE_AREA_FK" name="BASE_AREA_FK" memberEnd="BASE_AREA BASE_AREA_FK_AREA" navigableOwnedEnd="BASE_AREA_FK_AREA" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BASE_AREA_FK_AREA" name="BASE" type="BASE" association="BASE_AREA_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BASE_AREA_FK_AREA_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BASE_AREA_FK_AREA_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOAT" name="BOAT">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_YEAROFLASTRECONSTRUCTION" name="YEAROFLASTRECONSTRUCTION" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_YEAROFLASTRECONSTRUCTION_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_YEAROFLASTRECONSTRUCTION_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_OVERALLLENGTH" name="OVERALLLENGTH" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_OVERALLLENGTH_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_OVERALLLENGTH_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_HULLLENGTH" name="HULLLENGTH" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_HULLLENGTH_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_HULLLENGTH_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BOATKIND" name="BOATKIND" type="BOATKIND"  association="BOATKIND_BOAT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BOATKIND_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BOATKIND_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_FUELCAPACITY" name="FUELCAPACITY" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_FUELCAPACITY_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_FUELCAPACITY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_DRAFT" name="DRAFT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_DRAFT_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_DRAFT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_LENGTHOFWATERLINE" name="LENGTHOFWATERLINE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_LENGTHOFWATERLINE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_LENGTHOFWATERLINE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BUILTYEAR" name="BUILTYEAR" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BUILTYEAR_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BUILTYEAR_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BOATBRANDNAME" name="BOATBRANDNAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BOATBRANDNAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BOATBRANDNAME_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BOATMODELID" name="BOATMODELID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BOATMODELID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BOATMODELID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="BOAT_SERVICE_FK" general="SERVICE"/>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BERTHS" name="BERTHS" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BERTHS_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BERTHS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_WATERCAPACITY" name="WATERCAPACITY" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_WATERCAPACITY_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_WATERCAPACITY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BEAM" name="BEAM" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BEAM_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BEAM_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_TOILETS" name="TOILETS" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_TOILETS_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_TOILETS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BOATBRANDID" name="BOATBRANDID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BOATBRANDID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BOATBRANDID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_COMMISSIONPERCENT" name="COMMISSIONPERCENT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_COMMISSIONPERCENT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_COMMISSIONPERCENT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_VATPERCENT" name="VATPERCENT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_VATPERCENT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_VATPERCENT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BALLAST" name="BALLAST" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BALLAST_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BALLAST_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_CABINS" name="CABINS" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_CABINS_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_CABINS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BOATMODELNAME" name="BOATMODELNAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BOATMODELNAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BOATMODELNAME_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BOATID" name="BOATID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BOATID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BOATID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_COMMISSIONBASEDONNETPRICE" name="COMMISSIONBASEDONNETPRICE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_COMMISSIONBASEDONNETPRICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_COMMISSIONBASEDONNETPRICE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_BOATNAME" name="BOATNAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_BOATNAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_BOATNAME_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_REALTIMEAVAILABILITY" name="REALTIMEAVAILABILITY" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_REALTIMEAVAILABILITY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_REALTIMEAVAILABILITY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_PASSENGERS" name="PASSENGERS" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_PASSENGERS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_PASSENGERS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_FLEETOPERATORID" name="FLEETOPERATORID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_FLEETOPERATORID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_FLEETOPERATORID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_ENGINE" name="ENGINE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_ENGINE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_ENGINE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOAT_WEIGHT" name="WEIGHT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOAT_WEIGHT_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOAT_WEIGHT_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATKIND_BOAT_FK" name="BOATKIND_BOAT_FK" memberEnd="BOAT_BOATKIND BOATKIND_BOAT_FK_BOATKIND" navigableOwnedEnd="BOATKIND_BOAT_FK_BOATKIND" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATKIND_BOAT_FK_BOATKIND" name="BOAT" type="BOAT" association="BOATKIND_BOAT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATKIND_BOAT_FK_BOATKIND_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATKIND_BOAT_FK_BOATKIND_upper" value="1" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATBASES" name="BOATBASES">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATBASES_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATBASES_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATBASES_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATBASES_BASE" name="BASE" type="BASE"  association="BOATBASES_BASE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATBASES_BASE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATBASES_BASE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATBASES_PRIMARY" name="PRIMARY" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATBASES_PRIMARY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATBASES_PRIMARY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATBASES_BOAT" name="BOAT" type="BOAT"  association="BASE_BOAT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATBASES_BOAT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATBASES_BOAT_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATBASES_BASE_FK" name="BOATBASES_BASE_FK" memberEnd="BOATBASES_BASE BOATBASES_BASE_FK_BASE" navigableOwnedEnd="BOATBASES_BASE_FK_BASE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATBASES_BASE_FK_BASE" name="BOATBASES" type="BOATBASES" association="BOATBASES_BASE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATBASES_BASE_FK_BASE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATBASES_BASE_FK_BASE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BASE_BOAT_FK" name="BASE_BOAT_FK" memberEnd="BOATBASES_BOAT BASE_BOAT_FK_BOAT" navigableOwnedEnd="BASE_BOAT_FK_BOAT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BASE_BOAT_FK_BOAT" name="BOATBASES" type="BOATBASES" association="BASE_BOAT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BASE_BOAT_FK_BOAT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BASE_BOAT_FK_BOAT_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATEQUIPMENT" name="BOATEQUIPMENT">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENT_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENT_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENT_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENT_EQUIPMENTCATEGORY" name="EQUIPMENTCATEGORY" type="EQUIPMENTCATEGORY"  association="BOATEQUIPMENT_EQUIPMENTCATE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENT_EQUIPMENTCATEGORY_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENT_EQUIPMENTCATEGORY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENT_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENT_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENT_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATEQUIPMENT_EQUIPMENTCATE_FK" name="BOATEQUIPMENT_EQUIPMENTCATE_FK" memberEnd="BOATEQUIPMENT_EQUIPMENTCATEGORY BOATEQUIPMENT_EQUIPMENTCATE_FK_EQUIPMENTCATEGORY" navigableOwnedEnd="BOATEQUIPMENT_EQUIPMENTCATE_FK_EQUIPMENTCATEGORY" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATEQUIPMENT_EQUIPMENTCATE_FK_EQUIPMENTCATEGORY" name="BOATEQUIPMENT" type="BOATEQUIPMENT" association="BOATEQUIPMENT_EQUIPMENTCATE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENT_EQUIPMENTCATE_FK_EQUIPMENTCATEGORY_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENT_EQUIPMENTCATE_FK_EQUIPMENTCATEGORY_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATEQUIPMENTEXTRAS" name="BOATEQUIPMENTEXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENTEXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENTEXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENTEXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="BOATEQUIPMENT_BOATEXTRAS_FK" general="BOATEXTRAS"/>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENTEXTRAS_BOATEQUIPMENTS" name="BOATEQUIPMENTS" type="BOATEQUIPMENTS"  association="BOATEQUIPMENT_BOATEQUIPMENT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENTEXTRAS_BOATEQUIPMENTS_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENTEXTRAS_BOATEQUIPMENTS_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATEQUIPMENT_BOATEQUIPMENT_FK" name="BOATEQUIPMENT_BOATEQUIPMENT_FK" memberEnd="BOATEQUIPMENTEXTRAS_BOATEQUIPMENTS BOATEQUIPMENT_BOATEQUIPMENT_FK_BOATEQUIPMENTS" navigableOwnedEnd="BOATEQUIPMENT_BOATEQUIPMENT_FK_BOATEQUIPMENTS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATEQUIPMENT_BOATEQUIPMENT_FK_BOATEQUIPMENTS" name="BOATEQUIPMENTEXTRAS" type="BOATEQUIPMENTEXTRAS" association="BOATEQUIPMENT_BOATEQUIPMENT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENT_BOATEQUIPMENT_FK_BOATEQUIPMENTS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENT_BOATEQUIPMENT_FK_BOATEQUIPMENTS_upper" value="1" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATEQUIPMENTS" name="BOATEQUIPMENTS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENTS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENTS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENTS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENTS_BOATEQUIPMENT" name="BOATEQUIPMENT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENTS_BOATEQUIPMENT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENTS_BOATEQUIPMENT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEQUIPMENTS_BOAT" name="BOAT" type="BOAT"  association="BOATEQUIPMENT_BOAT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENTS_BOAT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENTS_BOAT_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATEQUIPMENT_BOAT_FK" name="BOATEQUIPMENT_BOAT_FK" memberEnd="BOATEQUIPMENTS_BOAT BOATEQUIPMENT_BOAT_FK_BOAT" navigableOwnedEnd="BOATEQUIPMENT_BOAT_FK_BOAT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATEQUIPMENT_BOAT_FK_BOAT" name="BOATEQUIPMENTS" type="BOATEQUIPMENTS" association="BOATEQUIPMENT_BOAT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEQUIPMENT_BOAT_FK_BOAT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEQUIPMENT_BOAT_FK_BOAT_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATEXTRABASES" name="BOATEXTRABASES">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRABASES_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRABASES_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRABASES_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRABASES_BASE" name="BASE" type="BASE"  association="BOATEXTRABASE_BASE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRABASES_BASE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRABASES_BASE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRABASES_BOATEXTRAPRICE" name="BOATEXTRAPRICE" type="BOATEXTRAPRICE"  association="STARTINGBASES_BOATEXTRAPRIC_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRABASES_BOATEXTRAPRICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRABASES_BOATEXTRAPRICE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATEXTRABASE_BASE_FK" name="BOATEXTRABASE_BASE_FK" memberEnd="BOATEXTRABASES_BASE BOATEXTRABASE_BASE_FK_BASE" navigableOwnedEnd="BOATEXTRABASE_BASE_FK_BASE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATEXTRABASE_BASE_FK_BASE" name="BOATEXTRABASES" type="BOATEXTRABASES" association="BOATEXTRABASE_BASE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRABASE_BASE_FK_BASE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRABASE_BASE_FK_BASE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="STARTINGBASES_BOATEXTRAPRIC_FK" name="STARTINGBASES_BOATEXTRAPRIC_FK" memberEnd="BOATEXTRABASES_BOATEXTRAPRICE STARTINGBASES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" navigableOwnedEnd="STARTINGBASES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="STARTINGBASES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" name="BOATEXTRABASES" type="BOATEXTRABASES" association="STARTINGBASES_BOATEXTRAPRIC_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="STARTINGBASES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="STARTINGBASES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATEXTRAPRICE" name="BOATEXTRAPRICE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_BOATEXTRAS" name="BOATEXTRAS" type="BOATEXTRAS"  association="BOATEXTRAPRIC_BOATEXTRAS_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_BOATEXTRAS_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_BOATEXTRAS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_TRANSFERENDLOCATION" name="TRANSFERENDLOCATION" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_TRANSFERENDLOCATION_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_TRANSFERENDLOCATION_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_PRICEREFUNDABLE" name="PRICEREFUNDABLE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_PRICEREFUNDABLE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_PRICEREFUNDABLE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLETO" name="TRANSFERPEOPLETO" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLETO_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLETO_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_APPROXIMATEPRICE" name="APPROXIMATEPRICE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_APPROXIMATEPRICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_APPROXIMATEPRICE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_DESCRIPTION" name="DESCRIPTION" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_DESCRIPTION_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_DESCRIPTION_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_TRANSFERSTARTLOCATION" name="TRANSFERSTARTLOCATION" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_TRANSFERSTARTLOCATION_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_TRANSFERSTARTLOCATION_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLEFROM" name="TRANSFERPEOPLEFROM" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLEFROM_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLEFROM_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_INCLUDEDINCHARTERPRICE" name="INCLUDEDINCHARTERPRICE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_INCLUDEDINCHARTERPRICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_INCLUDEDINCHARTERPRICE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="BOATEXTRAPRIC_PRICE_FK" general="PRICE"/>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_NAME_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_NAME_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAPRICE_MEANOFTRANSPORTATIONID" name="MEANOFTRANSPORTATIONID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRICE_MEANOFTRANSPORTATIONID_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRICE_MEANOFTRANSPORTATIONID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATEXTRAPRIC_BOATEXTRAS_FK" name="BOATEXTRAPRIC_BOATEXTRAS_FK" memberEnd="BOATEXTRAPRICE_BOATEXTRAS BOATEXTRAPRIC_BOATEXTRAS_FK_BOATEXTRAS" navigableOwnedEnd="BOATEXTRAPRIC_BOATEXTRAS_FK_BOATEXTRAS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATEXTRAPRIC_BOATEXTRAS_FK_BOATEXTRAS" name="BOATEXTRAPRICE" type="BOATEXTRAPRICE" association="BOATEXTRAPRIC_BOATEXTRAS_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAPRIC_BOATEXTRAS_FK_BOATEXTRAS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAPRIC_BOATEXTRAS_FK_BOATEXTRAS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATEXTRAS" name="BOATEXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATEXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATEXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATEXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="BOATEXTRAS_EXTRAS_FK" general="EXTRAS"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATIMAGES" name="BOATIMAGES">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATIMAGES_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATIMAGES_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATIMAGES_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATIMAGES_BOAT" name="BOAT" type="BOAT"  association="BOATIMAGES_BOAT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATIMAGES_BOAT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATIMAGES_BOAT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATIMAGES_IMAGE" name="IMAGE" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATIMAGES_IMAGE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATIMAGES_IMAGE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="BOATIMAGES_BOAT_FK" name="BOATIMAGES_BOAT_FK" memberEnd="BOATIMAGES_BOAT BOATIMAGES_BOAT_FK_BOAT" navigableOwnedEnd="BOATIMAGES_BOAT_FK_BOAT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="BOATIMAGES_BOAT_FK_BOAT" name="BOATIMAGES" type="BOATIMAGES" association="BOATIMAGES_BOAT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATIMAGES_BOAT_FK_BOAT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATIMAGES_BOAT_FK_BOAT_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATKIND" name="BOATKIND">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATKIND_LITERAL" name="LITERAL" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATKIND_LITERAL_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATKIND_LITERAL_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATKIND_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATKIND_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATKIND_ID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="BOATSERVICEEXTRAS" name="BOATSERVICEEXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="BOATSERVICEEXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="BOATSERVICEEXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BOATSERVICEEXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="BOATSERVICEEX_BOATEXTRAS_FK" general="BOATEXTRAS"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="CATEGORY" name="CATEGORY">
+<ownedAttribute xmi:type="uml:Property" xmi:id="CATEGORY_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CATEGORY_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CATEGORY_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CATEGORY_VALIDITYDATE" name="VALIDITYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CATEGORY_VALIDITYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CATEGORY_VALIDITYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CATEGORY_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CATEGORY_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CATEGORY_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CATEGORY_PARENTCATEGORY" name="PARENTCATEGORY" type="CATEGORY"  association="SUBCATEGORIES_PARENTCATEGOR_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CATEGORY_PARENTCATEGORY_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CATEGORY_PARENTCATEGORY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CATEGORY_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CATEGORY_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CATEGORY_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="SUBCATEGORIES_PARENTCATEGOR_FK" name="SUBCATEGORIES_PARENTCATEGOR_FK" memberEnd="CATEGORY_PARENTCATEGORY SUBCATEGORIES_PARENTCATEGOR_FK_PARENTCATEGORY" navigableOwnedEnd="SUBCATEGORIES_PARENTCATEGOR_FK_PARENTCATEGORY" >
+<ownedEnd xmi:type="uml:Property" xmi:id="SUBCATEGORIES_PARENTCATEGOR_FK_PARENTCATEGORY" name="CATEGORY" type="CATEGORY" association="SUBCATEGORIES_PARENTCATEGOR_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUBCATEGORIES_PARENTCATEGOR_FK_PARENTCATEGORY_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUBCATEGORIES_PARENTCATEGOR_FK_PARENTCATEGORY_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="CHARTERDATE" name="CHARTERDATE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="CHARTERDATE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATE_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CHARTERDATE_DATETO" name="DATETO"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATE_DATETO_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATE_DATETO_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CHARTERDATE_DATEFROM" name="DATEFROM"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATE_DATEFROM_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATE_DATEFROM_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="CHARTERDATES" name="CHARTERDATES">
+<ownedAttribute xmi:type="uml:Property" xmi:id="CHARTERDATES_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATES_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATES_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CHARTERDATES_CHARTERDATE" name="CHARTERDATE" type="CHARTERDATE"  association="CHARTERDATES_CHARTERDATE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATES_CHARTERDATE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATES_CHARTERDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CHARTERDATES_BOATEXTRAPRICE" name="BOATEXTRAPRICE" type="BOATEXTRAPRICE"  association="CHARTERDATES_BOATEXTRAPRIC_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATES_BOATEXTRAPRICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATES_BOATEXTRAPRICE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="CHARTERDATES_CHARTERDATE_FK" name="CHARTERDATES_CHARTERDATE_FK" memberEnd="CHARTERDATES_CHARTERDATE CHARTERDATES_CHARTERDATE_FK_CHARTERDATE" navigableOwnedEnd="CHARTERDATES_CHARTERDATE_FK_CHARTERDATE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="CHARTERDATES_CHARTERDATE_FK_CHARTERDATE" name="CHARTERDATES" type="CHARTERDATES" association="CHARTERDATES_CHARTERDATE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATES_CHARTERDATE_FK_CHARTERDATE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATES_CHARTERDATE_FK_CHARTERDATE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="CHARTERDATES_BOATEXTRAPRIC_FK" name="CHARTERDATES_BOATEXTRAPRIC_FK" memberEnd="CHARTERDATES_BOATEXTRAPRICE CHARTERDATES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" navigableOwnedEnd="CHARTERDATES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="CHARTERDATES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" name="CHARTERDATES" type="CHARTERDATES" association="CHARTERDATES_BOATEXTRAPRIC_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CHARTERDATES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CHARTERDATES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="CONTACTKIND" name="CONTACTKIND">
+<ownedAttribute xmi:type="uml:Property" xmi:id="CONTACTKIND_LITERAL" name="LITERAL" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CONTACTKIND_LITERAL_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CONTACTKIND_LITERAL_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CONTACTKIND_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CONTACTKIND_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CONTACTKIND_ID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="COUNTRY" name="COUNTRY">
+<ownedAttribute xmi:type="uml:Property" xmi:id="COUNTRY_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="COUNTRY_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="COUNTRY_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="COUNTRY_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="COUNTRY_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="COUNTRY_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="COUNTRY_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="COUNTRY_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="COUNTRY_NAME_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="COUNTRY_ISOSHORT" name="ISOSHORT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="COUNTRY_ISOSHORT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="COUNTRY_ISOSHORT_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="CURRENCY" name="CURRENCY">
+<ownedAttribute xmi:type="uml:Property" xmi:id="CURRENCY_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CURRENCY_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CURRENCY_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CURRENCY_VALIDITYDATE" name="VALIDITYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CURRENCY_VALIDITYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CURRENCY_VALIDITYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CURRENCY_ISONAME" name="ISONAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CURRENCY_ISONAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CURRENCY_ISONAME_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CURRENCY_SYMBOL" name="SYMBOL" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CURRENCY_SYMBOL_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CURRENCY_SYMBOL_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CURRENCY_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="CURRENCY_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CURRENCY_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="CURRENCY_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="CURRENCY_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CURRENCY_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="DESTINATION" name="DESTINATION">
+<ownedAttribute xmi:type="uml:Property" xmi:id="DESTINATION_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="DESTINATION_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="DESTINATION_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="DESTINATION_SERVICE_FK" general="SERVICE"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="EQUIPMENTCATEGORY" name="EQUIPMENTCATEGORY">
+<ownedAttribute xmi:type="uml:Property" xmi:id="EQUIPMENTCATEGORY_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="EQUIPMENTCATEGORY_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EQUIPMENTCATEGORY_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="EQUIPMENTCATEGORY_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="EQUIPMENTCATEGORY_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EQUIPMENTCATEGORY_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="EXCLUDEDEXTRAS" name="EXCLUDEDEXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="EXCLUDEDEXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXCLUDEDEXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXCLUDEDEXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="EXCLUDEDEXTRAS_EXTRAS" name="EXTRAS" type="EXTRAS"  association="EXCLUDEDEXTRA_EXTRAS_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXCLUDEDEXTRAS_EXTRAS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXCLUDEDEXTRAS_EXTRAS_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="EXCLUDEDEXTRA_EXTRAS_FK" name="EXCLUDEDEXTRA_EXTRAS_FK" memberEnd="EXCLUDEDEXTRAS_EXTRAS EXCLUDEDEXTRA_EXTRAS_FK_EXTRAS" navigableOwnedEnd="EXCLUDEDEXTRA_EXTRAS_FK_EXTRAS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="EXCLUDEDEXTRA_EXTRAS_FK_EXTRAS" name="EXCLUDEDEXTRAS" type="EXCLUDEDEXTRAS" association="EXCLUDEDEXTRA_EXTRAS_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXCLUDEDEXTRA_EXTRAS_FK_EXTRAS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXCLUDEDEXTRA_EXTRAS_FK_EXTRAS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="EXPERIENCE" name="EXPERIENCE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="EXPERIENCE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXPERIENCE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXPERIENCE_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="EXPERIENCE_SERVICE_FK" general="SERVICE"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="EXTRAS" name="EXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="EXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="EXTRAS_PRODUCT_FK" general="PRODUCT"/>
+<ownedAttribute xmi:type="uml:Property" xmi:id="EXTRAS_VALIDITYDATE" name="VALIDITYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXTRAS_VALIDITYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXTRAS_VALIDITYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="EXTRAS_EXCLUDEDEXTRAS" name="EXCLUDEDEXTRAS" type="EXCLUDEDEXTRAS"  association="EXTRAS_EXCLUDEDEXTRA_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXTRAS_EXCLUDEDEXTRAS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXTRAS_EXCLUDEDEXTRAS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="EXTRAS_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXTRAS_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXTRAS_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="EXTRAS_EXCLUDEDEXTRA_FK" name="EXTRAS_EXCLUDEDEXTRA_FK" memberEnd="EXTRAS_EXCLUDEDEXTRAS EXTRAS_EXCLUDEDEXTRA_FK_EXCLUDEDEXTRAS" navigableOwnedEnd="EXTRAS_EXCLUDEDEXTRA_FK_EXCLUDEDEXTRAS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="EXTRAS_EXCLUDEDEXTRA_FK_EXCLUDEDEXTRAS" name="EXTRAS" type="EXTRAS" association="EXTRAS_EXCLUDEDEXTRA_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="EXTRAS_EXCLUDEDEXTRA_FK_EXCLUDEDEXTRAS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EXTRAS_EXCLUDEDEXTRA_FK_EXCLUDEDEXTRAS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="INCLUDEDEXTRAS" name="INCLUDEDEXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="INCLUDEDEXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="INCLUDEDEXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="INCLUDEDEXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="INCLUDEDEXTRAS_VALIDITYDATE" name="VALIDITYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="INCLUDEDEXTRAS_VALIDITYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="INCLUDEDEXTRAS_VALIDITYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="INCLUDEDEXTRAS_EXTRAS" name="EXTRAS" type="EXTRAS"  association="INCLUDEDEXTRA_EXTRAS_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="INCLUDEDEXTRAS_EXTRAS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="INCLUDEDEXTRAS_EXTRAS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="INCLUDEDEXTRAS_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="INCLUDEDEXTRAS_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="INCLUDEDEXTRAS_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="INCLUDEDEXTRAS_SERVICE" name="SERVICE" type="SERVICE"  association="INCLUDEDEXTRA_SERVICE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="INCLUDEDEXTRAS_SERVICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="INCLUDEDEXTRAS_SERVICE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="INCLUDEDEXTRA_EXTRAS_FK" name="INCLUDEDEXTRA_EXTRAS_FK" memberEnd="INCLUDEDEXTRAS_EXTRAS INCLUDEDEXTRA_EXTRAS_FK_EXTRAS" navigableOwnedEnd="INCLUDEDEXTRA_EXTRAS_FK_EXTRAS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="INCLUDEDEXTRA_EXTRAS_FK_EXTRAS" name="INCLUDEDEXTRAS" type="INCLUDEDEXTRAS" association="INCLUDEDEXTRA_EXTRAS_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="INCLUDEDEXTRA_EXTRAS_FK_EXTRAS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="INCLUDEDEXTRA_EXTRAS_FK_EXTRAS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="INCLUDEDEXTRA_SERVICE_FK" name="INCLUDEDEXTRA_SERVICE_FK" memberEnd="INCLUDEDEXTRAS_SERVICE INCLUDEDEXTRA_SERVICE_FK_SERVICE" navigableOwnedEnd="INCLUDEDEXTRA_SERVICE_FK_SERVICE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="INCLUDEDEXTRA_SERVICE_FK_SERVICE" name="INCLUDEDEXTRAS" type="INCLUDEDEXTRAS" association="INCLUDEDEXTRA_SERVICE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="INCLUDEDEXTRA_SERVICE_FK_SERVICE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="INCLUDEDEXTRA_SERVICE_FK_SERVICE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="MAJOR" name="MAJOR">
+<ownedAttribute xmi:type="uml:Property" xmi:id="MAJOR_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="MAJOR_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="MAJOR_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="MAJOR_AREA_FK" general="AREA"/>
+<ownedAttribute xmi:type="uml:Property" xmi:id="MAJOR_PROVINCE" name="PROVINCE" type="PROVINCE"  association="MAJOR_PROVINCE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="MAJOR_PROVINCE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="MAJOR_PROVINCE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="MAJOR_PROVINCE_FK" name="MAJOR_PROVINCE_FK" memberEnd="MAJOR_PROVINCE MAJOR_PROVINCE_FK_PROVINCE" navigableOwnedEnd="MAJOR_PROVINCE_FK_PROVINCE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="MAJOR_PROVINCE_FK_PROVINCE" name="MAJOR" type="MAJOR" association="MAJOR_PROVINCE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="MAJOR_PROVINCE_FK_PROVINCE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="MAJOR_PROVINCE_FK_PROVINCE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="MOORING" name="MOORING">
+<ownedAttribute xmi:type="uml:Property" xmi:id="MOORING_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="MOORING_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="MOORING_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="MOORING_SERVICE_FK" general="SERVICE"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="OPTIONALEXTRAS" name="OPTIONALEXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="OPTIONALEXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="OPTIONALEXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="OPTIONALEXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="OPTIONALEXTRAS_VALIDITYDATE" name="VALIDITYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="OPTIONALEXTRAS_VALIDITYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="OPTIONALEXTRAS_VALIDITYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="OPTIONALEXTRAS_EXTRAS" name="EXTRAS" type="EXTRAS"  association="OPTIONALEXTRA_EXTRAS_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="OPTIONALEXTRAS_EXTRAS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="OPTIONALEXTRAS_EXTRAS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="OPTIONALEXTRAS_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="OPTIONALEXTRAS_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="OPTIONALEXTRAS_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="OPTIONALEXTRAS_SERVICE" name="SERVICE" type="SERVICE"  association="OPTIONALEXTRA_SERVICE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="OPTIONALEXTRAS_SERVICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="OPTIONALEXTRAS_SERVICE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="OPTIONALEXTRA_EXTRAS_FK" name="OPTIONALEXTRA_EXTRAS_FK" memberEnd="OPTIONALEXTRAS_EXTRAS OPTIONALEXTRA_EXTRAS_FK_EXTRAS" navigableOwnedEnd="OPTIONALEXTRA_EXTRAS_FK_EXTRAS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="OPTIONALEXTRA_EXTRAS_FK_EXTRAS" name="OPTIONALEXTRAS" type="OPTIONALEXTRAS" association="OPTIONALEXTRA_EXTRAS_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="OPTIONALEXTRA_EXTRAS_FK_EXTRAS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="OPTIONALEXTRA_EXTRAS_FK_EXTRAS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="OPTIONALEXTRA_SERVICE_FK" name="OPTIONALEXTRA_SERVICE_FK" memberEnd="OPTIONALEXTRAS_SERVICE OPTIONALEXTRA_SERVICE_FK_SERVICE" navigableOwnedEnd="OPTIONALEXTRA_SERVICE_FK_SERVICE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="OPTIONALEXTRA_SERVICE_FK_SERVICE" name="OPTIONALEXTRAS" type="OPTIONALEXTRAS" association="OPTIONALEXTRA_SERVICE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="OPTIONALEXTRA_SERVICE_FK_SERVICE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="OPTIONALEXTRA_SERVICE_FK_SERVICE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="ORDEREDEXTRAS" name="ORDEREDEXTRAS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDEXTRAS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDEXTRAS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDEXTRAS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDEXTRAS_QUANTITY" name="QUANTITY" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDEXTRAS_QUANTITY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDEXTRAS_QUANTITY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDEXTRAS_OPTIONALEXTRAS" name="OPTIONALEXTRAS" type="OPTIONALEXTRAS"  association="ORDEREDEXTRAS_OPTIONALEXTRA_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDEXTRAS_OPTIONALEXTRAS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDEXTRAS_OPTIONALEXTRAS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDEXTRAS_ORDEREDPRODUCT" name="ORDEREDPRODUCT" type="ORDEREDPRODUCT"  association="ORDEREDEXTRAS_ORDEREDPRODUC_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDEXTRAS_ORDEREDPRODUCT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDEXTRAS_ORDEREDPRODUCT_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ORDEREDEXTRAS_OPTIONALEXTRA_FK" name="ORDEREDEXTRAS_OPTIONALEXTRA_FK" memberEnd="ORDEREDEXTRAS_OPTIONALEXTRAS ORDEREDEXTRAS_OPTIONALEXTRA_FK_OPTIONALEXTRAS" navigableOwnedEnd="ORDEREDEXTRAS_OPTIONALEXTRA_FK_OPTIONALEXTRAS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ORDEREDEXTRAS_OPTIONALEXTRA_FK_OPTIONALEXTRAS" name="ORDEREDEXTRAS" type="ORDEREDEXTRAS" association="ORDEREDEXTRAS_OPTIONALEXTRA_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDEXTRAS_OPTIONALEXTRA_FK_OPTIONALEXTRAS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDEXTRAS_OPTIONALEXTRA_FK_OPTIONALEXTRAS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ORDEREDEXTRAS_ORDEREDPRODUC_FK" name="ORDEREDEXTRAS_ORDEREDPRODUC_FK" memberEnd="ORDEREDEXTRAS_ORDEREDPRODUCT ORDEREDEXTRAS_ORDEREDPRODUC_FK_ORDEREDPRODUCT" navigableOwnedEnd="ORDEREDEXTRAS_ORDEREDPRODUC_FK_ORDEREDPRODUCT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ORDEREDEXTRAS_ORDEREDPRODUC_FK_ORDEREDPRODUCT" name="ORDEREDEXTRAS" type="ORDEREDEXTRAS" association="ORDEREDEXTRAS_ORDEREDPRODUC_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDEXTRAS_ORDEREDPRODUC_FK_ORDEREDPRODUCT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDEXTRAS_ORDEREDPRODUC_FK_ORDEREDPRODUCT_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="ORDEREDPRODUCT" name="ORDEREDPRODUCT">
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDPRODUCT_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUCT_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUCT_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDPRODUCT_FROMDATE" name="FROMDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUCT_FROMDATE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUCT_FROMDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDPRODUCT_PRODUCT" name="PRODUCT" type="PRODUCT"  association="ORDEREDPRODUC_PRODUCT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUCT_PRODUCT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUCT_PRODUCT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDPRODUCT_TODATE" name="TODATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUCT_TODATE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUCT_TODATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDPRODUCT_QUANTITY" name="QUANTITY" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUCT_QUANTITY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUCT_QUANTITY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDPRODUCT_ORDERSTATUS" name="ORDERSTATUS" type="ORDERSTATUS"  association="ORDEREDPRODUC_ORDERSTATUS_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUCT_ORDERSTATUS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUCT_ORDERSTATUS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDEREDPRODUCT_SORDER" name="SORDER" type="SORDER"  association="ORDEREDPRODUC_SORDER_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUCT_SORDER_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUCT_SORDER_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ORDEREDPRODUC_PRODUCT_FK" name="ORDEREDPRODUC_PRODUCT_FK" memberEnd="ORDEREDPRODUCT_PRODUCT ORDEREDPRODUC_PRODUCT_FK_PRODUCT" navigableOwnedEnd="ORDEREDPRODUC_PRODUCT_FK_PRODUCT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ORDEREDPRODUC_PRODUCT_FK_PRODUCT" name="ORDEREDPRODUCT" type="ORDEREDPRODUCT" association="ORDEREDPRODUC_PRODUCT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUC_PRODUCT_FK_PRODUCT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUC_PRODUCT_FK_PRODUCT_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ORDEREDPRODUC_ORDERSTATUS_FK" name="ORDEREDPRODUC_ORDERSTATUS_FK" memberEnd="ORDEREDPRODUCT_ORDERSTATUS ORDEREDPRODUC_ORDERSTATUS_FK_ORDERSTATUS" navigableOwnedEnd="ORDEREDPRODUC_ORDERSTATUS_FK_ORDERSTATUS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ORDEREDPRODUC_ORDERSTATUS_FK_ORDERSTATUS" name="ORDEREDPRODUCT" type="ORDEREDPRODUCT" association="ORDEREDPRODUC_ORDERSTATUS_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUC_ORDERSTATUS_FK_ORDERSTATUS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUC_ORDERSTATUS_FK_ORDERSTATUS_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="ORDEREDPRODUC_SORDER_FK" name="ORDEREDPRODUC_SORDER_FK" memberEnd="ORDEREDPRODUCT_SORDER ORDEREDPRODUC_SORDER_FK_SORDER" navigableOwnedEnd="ORDEREDPRODUC_SORDER_FK_SORDER" >
+<ownedEnd xmi:type="uml:Property" xmi:id="ORDEREDPRODUC_SORDER_FK_SORDER" name="ORDEREDPRODUCT" type="ORDEREDPRODUCT" association="ORDEREDPRODUC_SORDER_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDEREDPRODUC_SORDER_FK_SORDER_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDEREDPRODUC_SORDER_FK_SORDER_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="ORDERSTATUS" name="ORDERSTATUS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDERSTATUS_LITERAL" name="LITERAL" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDERSTATUS_LITERAL_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDERSTATUS_LITERAL_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="ORDERSTATUS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="ORDERSTATUS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ORDERSTATUS_ID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PACK" name="PACK">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PACK_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PACK_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PACK_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="PACK_PRODUCT_FK" general="PRODUCT"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PAYMENTMETHOD" name="PAYMENTMETHOD">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PAYMENTMETHOD_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PAYMENTMETHOD_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PAYMENTMETHOD_ID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PAYMENTMETHODS" name="PAYMENTMETHODS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PAYMENTMETHODS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PAYMENTMETHODS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PAYMENTMETHODS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PAYMENTMETHODS_PAYMENTMETHOD" name="PAYMENTMETHOD" type="PAYMENTMETHOD"  association="PAYMENTMETHOD_PAYMENTMETHOD_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PAYMENTMETHODS_PAYMENTMETHOD_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PAYMENTMETHODS_PAYMENTMETHOD_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PAYMENTMETHODS_PRICE" name="PRICE" type="PRICE"  association="PAYMENTMETHOD_PRICE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PAYMENTMETHODS_PRICE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PAYMENTMETHODS_PRICE_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PAYMENTMETHOD_PAYMENTMETHOD_FK" name="PAYMENTMETHOD_PAYMENTMETHOD_FK" memberEnd="PAYMENTMETHODS_PAYMENTMETHOD PAYMENTMETHOD_PAYMENTMETHOD_FK_PAYMENTMETHOD" navigableOwnedEnd="PAYMENTMETHOD_PAYMENTMETHOD_FK_PAYMENTMETHOD" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PAYMENTMETHOD_PAYMENTMETHOD_FK_PAYMENTMETHOD" name="PAYMENTMETHODS" type="PAYMENTMETHODS" association="PAYMENTMETHOD_PAYMENTMETHOD_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PAYMENTMETHOD_PAYMENTMETHOD_FK_PAYMENTMETHOD_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PAYMENTMETHOD_PAYMENTMETHOD_FK_PAYMENTMETHOD_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PAYMENTMETHOD_PRICE_FK" name="PAYMENTMETHOD_PRICE_FK" memberEnd="PAYMENTMETHODS_PRICE PAYMENTMETHOD_PRICE_FK_PRICE" navigableOwnedEnd="PAYMENTMETHOD_PRICE_FK_PRICE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PAYMENTMETHOD_PRICE_FK_PRICE" name="PAYMENTMETHODS" type="PAYMENTMETHODS" association="PAYMENTMETHOD_PRICE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PAYMENTMETHOD_PRICE_FK_PRICE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PAYMENTMETHOD_PRICE_FK_PRICE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PRICE" name="PRICE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICE_VALIDITYDATE" name="VALIDITYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_VALIDITYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_VALIDITYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICE_AMOUNT" name="AMOUNT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_AMOUNT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_AMOUNT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICE_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICE_PRICEUNIT" name="PRICEUNIT" type="PRICEUNIT"  association="PRICEUNIT_PRICE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_PRICEUNIT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_PRICEUNIT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICE_SERVICE" name="SERVICE" type="PRODUCT"  association="PRICE_SERVICE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_SERVICE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_SERVICE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICE_CURRENCY" name="CURRENCY" type="CURRENCY"  association="PRICE_CURRENCY_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_CURRENCY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_CURRENCY_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PRICEUNIT_PRICE_FK" name="PRICEUNIT_PRICE_FK" memberEnd="PRICE_PRICEUNIT PRICEUNIT_PRICE_FK_PRICEUNIT" navigableOwnedEnd="PRICEUNIT_PRICE_FK_PRICEUNIT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PRICEUNIT_PRICE_FK_PRICEUNIT" name="PRICE" type="PRICE" association="PRICEUNIT_PRICE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICEUNIT_PRICE_FK_PRICEUNIT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICEUNIT_PRICE_FK_PRICEUNIT_upper" value="1" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PRICE_SERVICE_FK" name="PRICE_SERVICE_FK" memberEnd="PRICE_SERVICE PRICE_SERVICE_FK_SERVICE" navigableOwnedEnd="PRICE_SERVICE_FK_SERVICE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PRICE_SERVICE_FK_SERVICE" name="PRICE" type="PRICE" association="PRICE_SERVICE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_SERVICE_FK_SERVICE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_SERVICE_FK_SERVICE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PRICE_CURRENCY_FK" name="PRICE_CURRENCY_FK" memberEnd="PRICE_CURRENCY PRICE_CURRENCY_FK_CURRENCY" navigableOwnedEnd="PRICE_CURRENCY_FK_CURRENCY" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PRICE_CURRENCY_FK_CURRENCY" name="PRICE" type="PRICE" association="PRICE_CURRENCY_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICE_CURRENCY_FK_CURRENCY_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICE_CURRENCY_FK_CURRENCY_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PRICEUNIT" name="PRICEUNIT">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICEUNIT_LITERAL" name="LITERAL" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICEUNIT_LITERAL_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICEUNIT_LITERAL_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRICEUNIT_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRICEUNIT_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRICEUNIT_ID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PRODUCT" name="PRODUCT">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_CATEGORY" name="CATEGORY" type="CATEGORY"  association="SERVICE_CATEGORY_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_CATEGORY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_CATEGORY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_VALIDITYDATE" name="VALIDITYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_VALIDITYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_VALIDITYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_PROVIDERPRODUCTS" name="PROVIDERPRODUCTS" type="PROVIDERPRODUCTS"  association="PRODUCT_PROVIDERPRODU_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_PROVIDERPRODUCTS_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_PROVIDERPRODUCTS_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_DESCRIPTION" name="DESCRIPTION" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_DESCRIPTION_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_DESCRIPTION_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_PACK" name="PACK" type="PACK"  association="SERVICE_PACK_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_PACK_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_PACK_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCT_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PRODUCT_PROVIDERPRODU_FK" name="PRODUCT_PROVIDERPRODU_FK" memberEnd="PRODUCT_PROVIDERPRODUCTS PRODUCT_PROVIDERPRODU_FK_PROVIDERPRODUCTS" navigableOwnedEnd="PRODUCT_PROVIDERPRODU_FK_PROVIDERPRODUCTS" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PRODUCT_PROVIDERPRODU_FK_PROVIDERPRODUCTS" name="PRODUCT" type="PRODUCT" association="PRODUCT_PROVIDERPRODU_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCT_PROVIDERPRODU_FK_PROVIDERPRODUCTS_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCT_PROVIDERPRODU_FK_PROVIDERPRODUCTS_upper" value="1" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="SERVICE_CATEGORY_FK" name="SERVICE_CATEGORY_FK" memberEnd="PRODUCT_CATEGORY SERVICE_CATEGORY_FK_CATEGORY" navigableOwnedEnd="SERVICE_CATEGORY_FK_CATEGORY" >
+<ownedEnd xmi:type="uml:Property" xmi:id="SERVICE_CATEGORY_FK_CATEGORY" name="PRODUCT" type="PRODUCT" association="SERVICE_CATEGORY_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SERVICE_CATEGORY_FK_CATEGORY_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SERVICE_CATEGORY_FK_CATEGORY_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="SERVICE_PACK_FK" name="SERVICE_PACK_FK" memberEnd="PRODUCT_PACK SERVICE_PACK_FK_PACK" navigableOwnedEnd="SERVICE_PACK_FK_PACK" >
+<ownedEnd xmi:type="uml:Property" xmi:id="SERVICE_PACK_FK_PACK" name="PRODUCT" type="PRODUCT" association="SERVICE_PACK_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SERVICE_PACK_FK_PACK_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SERVICE_PACK_FK_PACK_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PRODUCTRATINGCATEGORIES" name="PRODUCTRATINGCATEGORIES">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCTRATINGCATEGORIES_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCTRATINGCATEGORIES_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCTRATINGCATEGORIES_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCTRATINGCATEGORIES_PRODUCT" name="PRODUCT" type="PRODUCT"  association="PRODUCTRATING_PRODUCT_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCTRATINGCATEGORIES_PRODUCT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCTRATINGCATEGORIES_PRODUCT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PRODUCTRATINGCATEGORIES_RATINGCATEGORY" name="RATINGCATEGORY" type="RATINGCATEGORY"  association="PRODUCTRATING_RATINGCATEGOR_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCTRATINGCATEGORIES_RATINGCATEGORY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCTRATINGCATEGORIES_RATINGCATEGORY_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PRODUCTRATING_RATINGCATEGOR_FK" name="PRODUCTRATING_RATINGCATEGOR_FK" memberEnd="PRODUCTRATINGCATEGORIES_RATINGCATEGORY PRODUCTRATING_RATINGCATEGOR_FK_RATINGCATEGORY" navigableOwnedEnd="PRODUCTRATING_RATINGCATEGOR_FK_RATINGCATEGORY" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PRODUCTRATING_RATINGCATEGOR_FK_RATINGCATEGORY" name="PRODUCTRATINGCATEGORIES" type="PRODUCTRATINGCATEGORIES" association="PRODUCTRATING_RATINGCATEGOR_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCTRATING_RATINGCATEGOR_FK_RATINGCATEGORY_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCTRATING_RATINGCATEGOR_FK_RATINGCATEGORY_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PRODUCTRATING_PRODUCT_FK" name="PRODUCTRATING_PRODUCT_FK" memberEnd="PRODUCTRATINGCATEGORIES_PRODUCT PRODUCTRATING_PRODUCT_FK_PRODUCT" navigableOwnedEnd="PRODUCTRATING_PRODUCT_FK_PRODUCT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PRODUCTRATING_PRODUCT_FK_PRODUCT" name="PRODUCTRATINGCATEGORIES" type="PRODUCTRATINGCATEGORIES" association="PRODUCTRATING_PRODUCT_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PRODUCTRATING_PRODUCT_FK_PRODUCT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PRODUCTRATING_PRODUCT_FK_PRODUCT_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PROVIDERPRODUCTS" name="PROVIDERPRODUCTS">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PROVIDERPRODUCTS_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PROVIDERPRODUCTS_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PROVIDERPRODUCTS_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PROVIDERPRODUCTS_PROVIDER" name="PROVIDER" type="SUSER"  association="PROVIDERPRODU_PROVIDER_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PROVIDERPRODUCTS_PROVIDER_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PROVIDERPRODUCTS_PROVIDER_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PROVIDERPRODU_PROVIDER_FK" name="PROVIDERPRODU_PROVIDER_FK" memberEnd="PROVIDERPRODUCTS_PROVIDER PROVIDERPRODU_PROVIDER_FK_PROVIDER" navigableOwnedEnd="PROVIDERPRODU_PROVIDER_FK_PROVIDER" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PROVIDERPRODU_PROVIDER_FK_PROVIDER" name="PROVIDERPRODUCTS" type="PROVIDERPRODUCTS" association="PROVIDERPRODU_PROVIDER_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PROVIDERPRODU_PROVIDER_FK_PROVIDER_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PROVIDERPRODU_PROVIDER_FK_PROVIDER_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="PROVINCE" name="PROVINCE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="PROVINCE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PROVINCE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PROVINCE_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="PROVINCE_AREA_FK" general="AREA"/>
+<ownedAttribute xmi:type="uml:Property" xmi:id="PROVINCE_COUNTRY" name="COUNTRY" type="COUNTRY"  association="PROVINCE_COUNTRY_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="PROVINCE_COUNTRY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PROVINCE_COUNTRY_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="PROVINCE_COUNTRY_FK" name="PROVINCE_COUNTRY_FK" memberEnd="PROVINCE_COUNTRY PROVINCE_COUNTRY_FK_COUNTRY" navigableOwnedEnd="PROVINCE_COUNTRY_FK_COUNTRY" >
+<ownedEnd xmi:type="uml:Property" xmi:id="PROVINCE_COUNTRY_FK_COUNTRY" name="PROVINCE" type="PROVINCE" association="PROVINCE_COUNTRY_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="PROVINCE_COUNTRY_FK_COUNTRY_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PROVINCE_COUNTRY_FK_COUNTRY_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="RATING" name="RATING">
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATING_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATING_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATING_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATING_RATINGVALUE" name="RATINGVALUE" type="RATINGVALUE"  association="RATING_RATINGVALUE_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATING_RATINGVALUE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATING_RATINGVALUE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATING_RATINGCATEGORY" name="RATINGCATEGORY" type="PRODUCTRATINGCATEGORIES"  association="RATING_RATINGCATEGOR_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATING_RATINGCATEGORY_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATING_RATINGCATEGORY_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATING_REVIEW" name="REVIEW" type="REVIEW"  association="RATING_REVIEW_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATING_REVIEW_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATING_REVIEW_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="RATING_RATINGVALUE_FK" name="RATING_RATINGVALUE_FK" memberEnd="RATING_RATINGVALUE RATING_RATINGVALUE_FK_RATINGVALUE" navigableOwnedEnd="RATING_RATINGVALUE_FK_RATINGVALUE" >
+<ownedEnd xmi:type="uml:Property" xmi:id="RATING_RATINGVALUE_FK_RATINGVALUE" name="RATING" type="RATING" association="RATING_RATINGVALUE_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATING_RATINGVALUE_FK_RATINGVALUE_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATING_RATINGVALUE_FK_RATINGVALUE_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="RATING_RATINGCATEGOR_FK" name="RATING_RATINGCATEGOR_FK" memberEnd="RATING_RATINGCATEGORY RATING_RATINGCATEGOR_FK_RATINGCATEGORY" navigableOwnedEnd="RATING_RATINGCATEGOR_FK_RATINGCATEGORY" >
+<ownedEnd xmi:type="uml:Property" xmi:id="RATING_RATINGCATEGOR_FK_RATINGCATEGORY" name="RATING" type="RATING" association="RATING_RATINGCATEGOR_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATING_RATINGCATEGOR_FK_RATINGCATEGORY_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATING_RATINGCATEGOR_FK_RATINGCATEGORY_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="RATING_REVIEW_FK" name="RATING_REVIEW_FK" memberEnd="RATING_REVIEW RATING_REVIEW_FK_REVIEW" navigableOwnedEnd="RATING_REVIEW_FK_REVIEW" >
+<ownedEnd xmi:type="uml:Property" xmi:id="RATING_REVIEW_FK_REVIEW" name="RATING" type="RATING" association="RATING_REVIEW_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATING_REVIEW_FK_REVIEW_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATING_REVIEW_FK_REVIEW_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="RATINGCATEGORY" name="RATINGCATEGORY">
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATINGCATEGORY_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATINGCATEGORY_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATINGCATEGORY_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATINGCATEGORY_PARENTCATEGORY" name="PARENTCATEGORY" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATINGCATEGORY_PARENTCATEGORY_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATINGCATEGORY_PARENTCATEGORY_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="RATINGVALUE" name="RATINGVALUE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATINGVALUE_LITERAL" name="LITERAL" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATINGVALUE_LITERAL_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATINGVALUE_LITERAL_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="RATINGVALUE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="RATINGVALUE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="RATINGVALUE_ID_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="REVIEW" name="REVIEW">
+<ownedAttribute xmi:type="uml:Property" xmi:id="REVIEW_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="REVIEW_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="REVIEW_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="REVIEW_ORDEREDPRODUCT" name="ORDEREDPRODUCT" type="ORDEREDPRODUCT"  association="REVIEW_ORDEREDPRODUC_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="REVIEW_ORDEREDPRODUCT_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="REVIEW_ORDEREDPRODUCT_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="REVIEW_ORDEREDPRODUC_FK" name="REVIEW_ORDEREDPRODUC_FK" memberEnd="REVIEW_ORDEREDPRODUCT REVIEW_ORDEREDPRODUC_FK_ORDEREDPRODUCT" navigableOwnedEnd="REVIEW_ORDEREDPRODUC_FK_ORDEREDPRODUCT" >
+<ownedEnd xmi:type="uml:Property" xmi:id="REVIEW_ORDEREDPRODUC_FK_ORDEREDPRODUCT" name="REVIEW" type="REVIEW" association="REVIEW_ORDEREDPRODUC_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="REVIEW_ORDEREDPRODUC_FK_ORDEREDPRODUCT_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="REVIEW_ORDEREDPRODUC_FK_ORDEREDPRODUCT_upper" value="1" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="SERVICE" name="SERVICE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="SERVICE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SERVICE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SERVICE_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="SERVICE_PRODUCT_FK" general="PRODUCT"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="SORDER" name="SORDER">
+<ownedAttribute xmi:type="uml:Property" xmi:id="SORDER_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SORDER_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SORDER_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SORDER_ORDERDATE" name="ORDERDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="SORDER_ORDERDATE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SORDER_ORDERDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SORDER_PAYMENTDATE" name="PAYMENTDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="SORDER_PAYMENTDATE_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SORDER_PAYMENTDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SORDER_EXTERNALID" name="EXTERNALID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SORDER_EXTERNALID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SORDER_EXTERNALID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SORDER_SUSER" name="SUSER" type="SUSER"  association="SORDER_SUSER_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="SORDER_SUSER_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SORDER_SUSER_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="SORDER_SUSER_FK" name="SORDER_SUSER_FK" memberEnd="SORDER_SUSER SORDER_SUSER_FK_SUSER" navigableOwnedEnd="SORDER_SUSER_FK_SUSER" >
+<ownedEnd xmi:type="uml:Property" xmi:id="SORDER_SUSER_FK_SUSER" name="SORDER" type="SORDER" association="SORDER_SUSER_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SORDER_SUSER_FK_SUSER_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SORDER_SUSER_FK_SUSER_upper" value="*" />
+</ownedEnd></packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="SUSER" name="SUSER">
+<ownedAttribute xmi:type="uml:Property" xmi:id="SUSER_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUSER_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUSER_ID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SUSER_SURNAME" name="SURNAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUSER_SURNAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUSER_SURNAME_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SUSER_LOGIN" name="LOGIN" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUSER_LOGIN_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUSER_LOGIN_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SUSER_PASSPORT" name="PASSPORT" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUSER_PASSPORT_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUSER_PASSPORT_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SUSER_EXPIRYDATE" name="EXPIRYDATE"  type="TimestampDataType" >
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUSER_EXPIRYDATE_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUSER_EXPIRYDATE_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SUSER_NATIONALID" name="NATIONALID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUSER_NATIONALID_lower"/>
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUSER_NATIONALID_upper" value="1" />
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="SUSER_NAME" name="NAME" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="SUSER_NAME_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="SUSER_NAME_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="VILLAGE" name="VILLAGE">
+<ownedAttribute xmi:type="uml:Property" xmi:id="VILLAGE_ID" name="ID" >
+<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/><lowerValue xmi:type="uml:LiteralInteger" xmi:id="VILLAGE_ID_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="VILLAGE_ID_upper" value="1" />
+</ownedAttribute>
+<generalization xmi:id="VILLAGE_AREA_FK" general="AREA"/>
+<ownedAttribute xmi:type="uml:Property" xmi:id="VILLAGE_MAJOR" name="MAJOR" type="MAJOR"  association="VILLAGE_MAJOR_FK">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="VILLAGE_MAJOR_lower" value="1" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="VILLAGE_MAJOR_upper" value="1" />
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="VILLAGE_MAJOR_FK" name="VILLAGE_MAJOR_FK" memberEnd="VILLAGE_MAJOR VILLAGE_MAJOR_FK_MAJOR" navigableOwnedEnd="VILLAGE_MAJOR_FK_MAJOR" >
+<ownedEnd xmi:type="uml:Property" xmi:id="VILLAGE_MAJOR_FK_MAJOR" name="VILLAGE" type="VILLAGE" association="VILLAGE_MAJOR_FK" aggregation="shared" ><lowerValue xmi:type="uml:LiteralInteger" xmi:id="VILLAGE_MAJOR_FK_MAJOR_lower" value="0" />
+<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="VILLAGE_MAJOR_FK_MAJOR_upper" value="*" />
+</ownedEnd></packagedElement>
+</packagedElement>
+</nestedClassifier>
+</packagedElement>
+<profileApplication xmi:id="_ewg9gBt1Eea5NKvb7KrMNA">
+<eAnnotations xmi:id="_ewkn4Bt1Eea5NKvb7KrMNA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+<references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+</eAnnotations>
+<appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+</profileApplication>
+<profileApplication xmi:id="_6LVh8BemEeaLGOn060Nbgw">
+<eAnnotations xmi:id="_U1T6gQvQEeaFYrGxsbtraQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+<references xmi:type="ecore:EPackage" href="platform:/plugin/net.samsarasoftware.metamodels/profiles/database.profile.uml#_ZM-7EFc4EeeatsJTvGgPfw"/>
+</eAnnotations>
+<appliedProfile href="platform:/plugin/net.samsarasoftware.metamodels/profiles/database.profile.uml#_HfyHIGHXEeWubbGE4ctGJQ"/>
+</profileApplication>
+</uml:Model>
+<standard:Entity xmi:id="_fUo-QBt1Eea5NKvb7KrMNA" base_Component="entities"/>
+<standard:Subsystem xmi:id="_fUo-QBt1Eea5NKvb7KrMNA" base_Component="subsystem"/>
+<standard:Implement xmi:id="_fUo-QBt1Eea5NKvb7KrLNA" base_Component="subsystem"/>
+<database:primaryKey xmi:id="ORDEREDEXTRAS_ID_database_primaryKey" base_Property="ORDEREDEXTRAS_ID"/>
+<database:primaryKey xmi:id="PAYMENTMETHODS_ID_database_primaryKey" base_Property="PAYMENTMETHODS_ID"/>
+<database:primaryKey xmi:id="PROVIDERPRODUCTS_ID_database_primaryKey" base_Property="PROVIDERPRODUCTS_ID"/>
+<database:primaryKey xmi:id="SORDER_ID_database_primaryKey" base_Property="SORDER_ID"/>
+<database:primaryKey xmi:id="BOAT_ID_database_primaryKey" base_Property="BOAT_ID"/>
+<database:primaryKey xmi:id="RATINGCATEGORY_ID_database_primaryKey" base_Property="RATINGCATEGORY_ID"/>
+<database:primaryKey xmi:id="BOATBASES_ID_database_primaryKey" base_Property="BOATBASES_ID"/>
+<database:primaryKey xmi:id="RATING_ID_database_primaryKey" base_Property="RATING_ID"/>
+<database:primaryKey xmi:id="AVAILABILITYSTATUS_ID_database_primaryKey" base_Property="AVAILABILITYSTATUS_ID"/>
+<database:primaryKey xmi:id="BOATEXTRAS_ID_database_primaryKey" base_Property="BOATEXTRAS_ID"/>
+<database:primaryKey xmi:id="BOATIMAGES_ID_database_primaryKey" base_Property="BOATIMAGES_ID"/>
+<database:primaryKey xmi:id="PROVINCE_ID_database_primaryKey" base_Property="PROVINCE_ID"/>
+<database:primaryKey xmi:id="COUNTRY_ID_database_primaryKey" base_Property="COUNTRY_ID"/>
+<database:primaryKey xmi:id="BOATEQUIPMENTS_ID_database_primaryKey" base_Property="BOATEQUIPMENTS_ID"/>
+<database:primaryKey xmi:id="CURRENCY_ID_database_primaryKey" base_Property="CURRENCY_ID"/>
+<database:primaryKey xmi:id="SERVICE_ID_database_primaryKey" base_Property="SERVICE_ID"/>
+<database:primaryKey xmi:id="PRODUCT_ID_database_primaryKey" base_Property="PRODUCT_ID"/>
+<database:primaryKey xmi:id="BOATKIND_ID_database_primaryKey" base_Property="BOATKIND_ID"/>
+<database:primaryKey xmi:id="EXCLUDEDEXTRAS_ID_database_primaryKey" base_Property="EXCLUDEDEXTRAS_ID"/>
+<database:primaryKey xmi:id="ADDRESS_ID_database_primaryKey" base_Property="ADDRESS_ID"/>
+<database:primaryKey xmi:id="CATEGORY_ID_database_primaryKey" base_Property="CATEGORY_ID"/>
+<database:primaryKey xmi:id="BOATSERVICEEXTRAS_ID_database_primaryKey" base_Property="BOATSERVICEEXTRAS_ID"/>
+<database:primaryKey xmi:id="PRODUCTRATINGCATEGORIES_ID_database_primaryKey" base_Property="PRODUCTRATINGCATEGORIES_ID"/>
+<database:primaryKey xmi:id="PRICEUNIT_ID_database_primaryKey" base_Property="PRICEUNIT_ID"/>
+<database:primaryKey xmi:id="CONTACTKIND_ID_database_primaryKey" base_Property="CONTACTKIND_ID"/>
+<database:primaryKey xmi:id="REVIEW_ID_database_primaryKey" base_Property="REVIEW_ID"/>
+<database:primaryKey xmi:id="EQUIPMENTCATEGORY_ID_database_primaryKey" base_Property="EQUIPMENTCATEGORY_ID"/>
+<database:primaryKey xmi:id="PAYMENTMETHOD_ID_database_primaryKey" base_Property="PAYMENTMETHOD_ID"/>
+<database:primaryKey xmi:id="EXTRAS_ID_database_primaryKey" base_Property="EXTRAS_ID"/>
+<database:primaryKey xmi:id="EXPERIENCE_ID_database_primaryKey" base_Property="EXPERIENCE_ID"/>
+<database:primaryKey xmi:id="PRICE_ID_database_primaryKey" base_Property="PRICE_ID"/>
+<database:primaryKey xmi:id="RATINGVALUE_ID_database_primaryKey" base_Property="RATINGVALUE_ID"/>
+<database:primaryKey xmi:id="DESTINATION_ID_database_primaryKey" base_Property="DESTINATION_ID"/>
+<database:primaryKey xmi:id="ORDERSTATUS_ID_database_primaryKey" base_Property="ORDERSTATUS_ID"/>
+<database:primaryKey xmi:id="PACK_ID_database_primaryKey" base_Property="PACK_ID"/>
+<database:primaryKey xmi:id="CHARTERDATES_ID_database_primaryKey" base_Property="CHARTERDATES_ID"/>
+<database:primaryKey xmi:id="ORDEREDPRODUCT_ID_database_primaryKey" base_Property="ORDEREDPRODUCT_ID"/>
+<database:primaryKey xmi:id="AREA_ID_database_primaryKey" base_Property="AREA_ID"/>
+<database:primaryKey xmi:id="BOATEXTRAPRICE_ID_database_primaryKey" base_Property="BOATEXTRAPRICE_ID"/>
+<database:primaryKey xmi:id="AVAILABILITY_ID_database_primaryKey" base_Property="AVAILABILITY_ID"/>
+<database:primaryKey xmi:id="SUSER_ID_database_primaryKey" base_Property="SUSER_ID"/>
+<database:primaryKey xmi:id="BASE_ID_database_primaryKey" base_Property="BASE_ID"/>
+<database:primaryKey xmi:id="MAJOR_ID_database_primaryKey" base_Property="MAJOR_ID"/>
+<database:primaryKey xmi:id="OPTIONALEXTRAS_ID_database_primaryKey" base_Property="OPTIONALEXTRAS_ID"/>
+<database:primaryKey xmi:id="CHARTERDATE_ID_database_primaryKey" base_Property="CHARTERDATE_ID"/>
+<database:primaryKey xmi:id="INCLUDEDEXTRAS_ID_database_primaryKey" base_Property="INCLUDEDEXTRAS_ID"/>
+<database:primaryKey xmi:id="BOATEXTRABASES_ID_database_primaryKey" base_Property="BOATEXTRABASES_ID"/>
+<database:primaryKey xmi:id="BOATEQUIPMENTEXTRAS_ID_database_primaryKey" base_Property="BOATEQUIPMENTEXTRAS_ID"/>
+<database:primaryKey xmi:id="MOORING_ID_database_primaryKey" base_Property="MOORING_ID"/>
+<database:primaryKey xmi:id="BOATEQUIPMENT_ID_database_primaryKey" base_Property="BOATEQUIPMENT_ID"/>
+<database:primaryKey xmi:id="VILLAGE_ID_database_primaryKey" base_Property="VILLAGE_ID"/>
+<database:joinedTableInheritance xmi:id="EXPERIENCE_SERVICE_FK_database_joinedTableInheritance" base_Generalization="EXPERIENCE_SERVICE_FK"/>
+<database:joinedTableInheritance xmi:id="PACK_PRODUCT_FK_database_joinedTableInheritance" base_Generalization="PACK_PRODUCT_FK"/>
+<database:joinedTableInheritance xmi:id="BOATSERVICEEX_BOATEXTRAS_FK_database_joinedTableInheritance" base_Generalization="BOATSERVICEEX_BOATEXTRAS_FK"/>
+<database:joinedTableInheritance xmi:id="MAJOR_AREA_FK_database_joinedTableInheritance" base_Generalization="MAJOR_AREA_FK"/>
+<database:joinedTableInheritance xmi:id="DESTINATION_SERVICE_FK_database_joinedTableInheritance" base_Generalization="DESTINATION_SERVICE_FK"/>
+<database:joinedTableInheritance xmi:id="BOATEXTRAPRIC_PRICE_FK_database_joinedTableInheritance" base_Generalization="BOATEXTRAPRIC_PRICE_FK"/>
+<database:joinedTableInheritance xmi:id="BOATEXTRAS_EXTRAS_FK_database_joinedTableInheritance" base_Generalization="BOATEXTRAS_EXTRAS_FK"/>
+<database:joinedTableInheritance xmi:id="VILLAGE_AREA_FK_database_joinedTableInheritance" base_Generalization="VILLAGE_AREA_FK"/>
+<database:joinedTableInheritance xmi:id="MOORING_SERVICE_FK_database_joinedTableInheritance" base_Generalization="MOORING_SERVICE_FK"/>
+<database:joinedTableInheritance xmi:id="PROVINCE_AREA_FK_database_joinedTableInheritance" base_Generalization="PROVINCE_AREA_FK"/>
+<database:joinedTableInheritance xmi:id="SERVICE_PRODUCT_FK_database_joinedTableInheritance" base_Generalization="SERVICE_PRODUCT_FK"/>
+<database:joinedTableInheritance xmi:id="BOAT_SERVICE_FK_database_joinedTableInheritance" base_Generalization="BOAT_SERVICE_FK"/>
+<database:joinedTableInheritance xmi:id="EXTRAS_PRODUCT_FK_database_joinedTableInheritance" base_Generalization="EXTRAS_PRODUCT_FK"/>
+<database:joinedTableInheritance xmi:id="BOATEQUIPMENT_BOATEXTRAS_FK_database_joinedTableInheritance" base_Generalization="BOATEQUIPMENT_BOATEXTRAS_FK"/>
+<database:foreignKey xmi:id="REVIEW_ORDEREDPRODUC_FK_database_foreignKey" base_Association="REVIEW_ORDEREDPRODUC_FK" name="REVIEW_ORDEREDPRODUC_FK"/>
+<database:foreignKey xmi:id="BASE_BOAT_FK_database_foreignKey" base_Association="BASE_BOAT_FK" name="BASE_BOAT_FK"/>
+<database:foreignKey xmi:id="PRICEUNIT_PRICE_FK_database_foreignKey" base_Association="PRICEUNIT_PRICE_FK" name="PRICEUNIT_PRICE_FK"/>
+<database:foreignKey xmi:id="BOATEQUIPMENT_EQUIPMENTCATE_FK_database_foreignKey" base_Association="BOATEQUIPMENT_EQUIPMENTCATE_FK" name="BOATEQUIPMENT_EQUIPMENTCATE_FK"/>
+<database:foreignKey xmi:id="SERVICE_PACK_FK_database_foreignKey" base_Association="SERVICE_PACK_FK" name="SERVICE_PACK_FK"/>
+<database:foreignKey xmi:id="CHARTERDATES_BOATEXTRAPRIC_FK_database_foreignKey" base_Association="CHARTERDATES_BOATEXTRAPRIC_FK" name="CHARTERDATES_BOATEXTRAPRIC_FK"/>
+<database:foreignKey xmi:id="RATING_REVIEW_FK_database_foreignKey" base_Association="RATING_REVIEW_FK" name="RATING_REVIEW_FK"/>
+<database:foreignKey xmi:id="PRICE_CURRENCY_FK_database_foreignKey" base_Association="PRICE_CURRENCY_FK" name="PRICE_CURRENCY_FK"/>
+<database:foreignKey xmi:id="ADDRESS_VILLAGE_FK_database_foreignKey" base_Association="ADDRESS_VILLAGE_FK" name="ADDRESS_VILLAGE_FK"/>
+<database:foreignKey xmi:id="PRICE_SERVICE_FK_database_foreignKey" base_Association="PRICE_SERVICE_FK" name="PRICE_SERVICE_FK"/>
+<database:foreignKey xmi:id="BOATEXTRAPRIC_BOATEXTRAS_FK_database_foreignKey" base_Association="BOATEXTRAPRIC_BOATEXTRAS_FK" name="BOATEXTRAPRIC_BOATEXTRAS_FK"/>
+<database:foreignKey xmi:id="BOATEXTRABASE_BASE_FK_database_foreignKey" base_Association="BOATEXTRABASE_BASE_FK" name="BOATEXTRABASE_BASE_FK"/>
+<database:foreignKey xmi:id="ADDRESS_CONTACTKIND_FK_database_foreignKey" base_Association="ADDRESS_CONTACTKIND_FK" name="ADDRESS_CONTACTKIND_FK"/>
+<database:foreignKey xmi:id="EXCLUDEDEXTRA_EXTRAS_FK_database_foreignKey" base_Association="EXCLUDEDEXTRA_EXTRAS_FK" name="EXCLUDEDEXTRA_EXTRAS_FK"/>
+<database:foreignKey xmi:id="BOATBASES_BASE_FK_database_foreignKey" base_Association="BOATBASES_BASE_FK" name="BOATBASES_BASE_FK"/>
+<database:foreignKey xmi:id="RATING_RATINGCATEGOR_FK_database_foreignKey" base_Association="RATING_RATINGCATEGOR_FK" name="RATING_RATINGCATEGOR_FK"/>
+<database:foreignKey xmi:id="PROVINCE_COUNTRY_FK_database_foreignKey" base_Association="PROVINCE_COUNTRY_FK" name="PROVINCE_COUNTRY_FK"/>
+<database:foreignKey xmi:id="BOATIMAGES_BOAT_FK_database_foreignKey" base_Association="BOATIMAGES_BOAT_FK" name="BOATIMAGES_BOAT_FK"/>
+<database:foreignKey xmi:id="ORDEREDEXTRAS_ORDEREDPRODUC_FK_database_foreignKey" base_Association="ORDEREDEXTRAS_ORDEREDPRODUC_FK" name="ORDEREDEXTRAS_ORDEREDPRODUC_FK"/>
+<database:foreignKey xmi:id="BOATEQUIPMENT_BOAT_FK_database_foreignKey" base_Association="BOATEQUIPMENT_BOAT_FK" name="BOATEQUIPMENT_BOAT_FK"/>
+<database:foreignKey xmi:id="PRODUCT_PROVIDERPRODU_FK_database_foreignKey" base_Association="PRODUCT_PROVIDERPRODU_FK" name="PRODUCT_PROVIDERPRODU_FK"/>
+<database:foreignKey xmi:id="AVAILABILITY_AVAILABILITYS_FK_database_foreignKey" base_Association="AVAILABILITY_AVAILABILITYS_FK" name="AVAILABILITY_AVAILABILITYS_FK"/>
+<database:foreignKey xmi:id="AVAILABILITY_PRODUCT_FK_database_foreignKey" base_Association="AVAILABILITY_PRODUCT_FK" name="AVAILABILITY_PRODUCT_FK"/>
+<database:foreignKey xmi:id="OPTIONALEXTRA_SERVICE_FK_database_foreignKey" base_Association="OPTIONALEXTRA_SERVICE_FK" name="OPTIONALEXTRA_SERVICE_FK"/>
+<database:foreignKey xmi:id="PROVIDERPRODU_PROVIDER_FK_database_foreignKey" base_Association="PROVIDERPRODU_PROVIDER_FK" name="PROVIDERPRODU_PROVIDER_FK"/>
+<database:foreignKey xmi:id="PAYMENTMETHOD_PRICE_FK_database_foreignKey" base_Association="PAYMENTMETHOD_PRICE_FK" name="PAYMENTMETHOD_PRICE_FK"/>
+<database:foreignKey xmi:id="VILLAGE_MAJOR_FK_database_foreignKey" base_Association="VILLAGE_MAJOR_FK" name="VILLAGE_MAJOR_FK"/>
+<database:foreignKey xmi:id="STARTINGBASES_BOATEXTRAPRIC_FK_database_foreignKey" base_Association="STARTINGBASES_BOATEXTRAPRIC_FK" name="STARTINGBASES_BOATEXTRAPRIC_FK"/>
+<database:foreignKey xmi:id="BASE_AREA_FK_database_foreignKey" base_Association="BASE_AREA_FK" name="BASE_AREA_FK"/>
+<database:foreignKey xmi:id="INCLUDEDEXTRA_EXTRAS_FK_database_foreignKey" base_Association="INCLUDEDEXTRA_EXTRAS_FK" name="INCLUDEDEXTRA_EXTRAS_FK"/>
+<database:foreignKey xmi:id="INCLUDEDEXTRA_SERVICE_FK_database_foreignKey" base_Association="INCLUDEDEXTRA_SERVICE_FK" name="INCLUDEDEXTRA_SERVICE_FK"/>
+<database:foreignKey xmi:id="BOATEQUIPMENT_BOATEQUIPMENT_FK_database_foreignKey" base_Association="BOATEQUIPMENT_BOATEQUIPMENT_FK" name="BOATEQUIPMENT_BOATEQUIPMENT_FK"/>
+<database:foreignKey xmi:id="RATING_RATINGVALUE_FK_database_foreignKey" base_Association="RATING_RATINGVALUE_FK" name="RATING_RATINGVALUE_FK"/>
+<database:foreignKey xmi:id="SUBCATEGORIES_PARENTCATEGOR_FK_database_foreignKey" base_Association="SUBCATEGORIES_PARENTCATEGOR_FK" name="SUBCATEGORIES_PARENTCATEGOR_FK"/>
+<database:foreignKey xmi:id="EXTRAS_EXCLUDEDEXTRA_FK_database_foreignKey" base_Association="EXTRAS_EXCLUDEDEXTRA_FK" name="EXTRAS_EXCLUDEDEXTRA_FK"/>
+<database:foreignKey xmi:id="ORDEREDPRODUC_PRODUCT_FK_database_foreignKey" base_Association="ORDEREDPRODUC_PRODUCT_FK" name="ORDEREDPRODUC_PRODUCT_FK"/>
+<database:foreignKey xmi:id="SORDER_SUSER_FK_database_foreignKey" base_Association="SORDER_SUSER_FK" name="SORDER_SUSER_FK"/>
+<database:foreignKey xmi:id="ORDEREDPRODUC_ORDERSTATUS_FK_database_foreignKey" base_Association="ORDEREDPRODUC_ORDERSTATUS_FK" name="ORDEREDPRODUC_ORDERSTATUS_FK"/>
+<database:foreignKey xmi:id="PAYMENTMETHOD_PAYMENTMETHOD_FK_database_foreignKey" base_Association="PAYMENTMETHOD_PAYMENTMETHOD_FK" name="PAYMENTMETHOD_PAYMENTMETHOD_FK"/>
+<database:foreignKey xmi:id="SERVICE_CATEGORY_FK_database_foreignKey" base_Association="SERVICE_CATEGORY_FK" name="SERVICE_CATEGORY_FK"/>
+<database:foreignKey xmi:id="ORDEREDEXTRAS_OPTIONALEXTRA_FK_database_foreignKey" base_Association="ORDEREDEXTRAS_OPTIONALEXTRA_FK" name="ORDEREDEXTRAS_OPTIONALEXTRA_FK"/>
+<database:foreignKey xmi:id="MAJOR_PROVINCE_FK_database_foreignKey" base_Association="MAJOR_PROVINCE_FK" name="MAJOR_PROVINCE_FK"/>
+<database:foreignKey xmi:id="PRODUCTRATING_PRODUCT_FK_database_foreignKey" base_Association="PRODUCTRATING_PRODUCT_FK" name="PRODUCTRATING_PRODUCT_FK"/>
+<database:foreignKey xmi:id="BOATKIND_BOAT_FK_database_foreignKey" base_Association="BOATKIND_BOAT_FK" name="BOATKIND_BOAT_FK"/>
+<database:foreignKey xmi:id="ORDEREDPRODUC_SORDER_FK_database_foreignKey" base_Association="ORDEREDPRODUC_SORDER_FK" name="ORDEREDPRODUC_SORDER_FK"/>
+<database:foreignKey xmi:id="PRODUCTRATING_RATINGCATEGOR_FK_database_foreignKey" base_Association="PRODUCTRATING_RATINGCATEGOR_FK" name="PRODUCTRATING_RATINGCATEGOR_FK"/>
+<database:foreignKey xmi:id="CHARTERDATES_CHARTERDATE_FK_database_foreignKey" base_Association="CHARTERDATES_CHARTERDATE_FK" name="CHARTERDATES_CHARTERDATE_FK"/>
+<database:foreignKey xmi:id="ADDRESS_SUSER_FK_database_foreignKey" base_Association="ADDRESS_SUSER_FK" name="ADDRESS_SUSER_FK"/>
+<database:foreignKey xmi:id="OPTIONALEXTRA_EXTRAS_FK_database_foreignKey" base_Association="OPTIONALEXTRA_EXTRAS_FK" name="OPTIONALEXTRA_EXTRAS_FK"/>
+<database:column xmi:id="BOATEXTRABASES_BASE_database_column" base_Property="BOATEXTRABASES_BASE" decimals="0" name="BASE" size="19"/>
+<database:column xmi:id="ORDEREDPRODUCT_FROMDATE_database_column" base_Property="ORDEREDPRODUCT_FROMDATE" decimals="6" name="FROMDATE" size="11"/>
+<database:column xmi:id="BOATSERVICEEXTRAS_ID_database_column" base_Property="BOATSERVICEEXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATBASES_ID_database_column" base_Property="BOATBASES_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="OPTIONALEXTRAS_VALIDITYDATE_database_column" base_Property="OPTIONALEXTRAS_VALIDITYDATE" decimals="6" name="VALIDITYDATE" size="11"/>
+<database:column xmi:id="INCLUDEDEXTRAS_ID_database_column" base_Property="INCLUDEDEXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOAT_DRAFT_database_column" base_Property="BOAT_DRAFT" name="DRAFT" size="126"/>
+<database:column xmi:id="BOATEQUIPMENT_NAME_database_column" base_Property="BOATEQUIPMENT_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="AVAILABILITY_AVAILABILITYSTATUS_database_column" base_Property="AVAILABILITY_AVAILABILITYSTATUS" decimals="0" name="AVAILABILITYSTATUS" size="19"/>
+<database:column xmi:id="EXTRAS_EXCLUDEDEXTRAS_database_column" base_Property="EXTRAS_EXCLUDEDEXTRAS" decimals="0" name="EXCLUDEDEXTRAS" size="19"/>
+<database:column xmi:id="RATING_RATINGCATEGOR_FK_RATINGCATEGORY_database_column" base_Property="RATING_RATINGCATEGOR_FK_RATINGCATEGORY" name="ID"/>
+<database:column xmi:id="PRODUCTRATINGCATEGORIES_PRODUCT_database_column" base_Property="PRODUCTRATINGCATEGORIES_PRODUCT" decimals="0" name="PRODUCT" size="19"/>
+<database:column xmi:id="RATINGCATEGORY_ID_database_column" base_Property="RATINGCATEGORY_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PAYMENTMETHOD_ID_database_column" base_Property="PAYMENTMETHOD_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="MOORING_ID_database_column" base_Property="MOORING_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PRODUCTRATING_PRODUCT_FK_PRODUCT_database_column" base_Property="PRODUCTRATING_PRODUCT_FK_PRODUCT" name="ID"/>
+<database:column xmi:id="BOAT_BOATMODELID_database_column" base_Property="BOAT_BOATMODELID" decimals="0" name="BOATMODELID" size="19"/>
+<database:column xmi:id="PRICE_CURRENCY_FK_CURRENCY_database_column" base_Property="PRICE_CURRENCY_FK_CURRENCY" name="ID"/>
+<database:column xmi:id="BOATBASES_BOAT_database_column" base_Property="BOATBASES_BOAT" decimals="0" name="BOAT" size="19"/>
+<database:column xmi:id="ORDEREDPRODUCT_TODATE_database_column" base_Property="ORDEREDPRODUCT_TODATE" decimals="6" name="TODATE" size="11"/>
+<database:column xmi:id="BOATEQUIPMENT_ID_database_column" base_Property="BOATEQUIPMENT_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOAT_PASSENGERS_database_column" base_Property="BOAT_PASSENGERS" decimals="-127" name="PASSENGERS" size="0"/>
+<database:column xmi:id="BOATIMAGES_BOAT_FK_BOAT_database_column" base_Property="BOATIMAGES_BOAT_FK_BOAT" name="ID"/>
+<database:column xmi:id="COUNTRY_EXPIRYDATE_database_column" base_Property="COUNTRY_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLETO_database_column" base_Property="BOATEXTRAPRICE_TRANSFERPEOPLETO" decimals="-127" name="TRANSFERPEOPLETO" size="0"/>
+<database:column xmi:id="RATING_REVIEW_FK_REVIEW_database_column" base_Property="RATING_REVIEW_FK_REVIEW" name="ID"/>
+<database:column xmi:id="SUSER_NAME_database_column" base_Property="SUSER_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="RATING_RATINGVALUE_database_column" base_Property="RATING_RATINGVALUE" decimals="0" name="RATINGVALUE" size="19"/>
+<database:column xmi:id="PRICE_AMOUNT_database_column" base_Property="PRICE_AMOUNT" name="AMOUNT" size="126"/>
+<database:column xmi:id="EXTRAS_VALIDITYDATE_database_column" base_Property="EXTRAS_VALIDITYDATE" decimals="6" name="VALIDITYDATE" size="11"/>
+<database:column xmi:id="RATING_ID_database_column" base_Property="RATING_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="INCLUDEDEXTRAS_EXTRAS_database_column" base_Property="INCLUDEDEXTRAS_EXTRAS" decimals="0" name="EXTRAS" size="19"/>
+<database:column xmi:id="CATEGORY_NAME_database_column" base_Property="CATEGORY_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="CHARTERDATES_CHARTERDATE_database_column" base_Property="CHARTERDATES_CHARTERDATE" decimals="0" name="CHARTERDATE" size="19"/>
+<database:column xmi:id="VILLAGE_MAJOR_database_column" base_Property="VILLAGE_MAJOR" decimals="0" name="MAJOR" size="19"/>
+<database:column xmi:id="ADDRESS_FLOOR_database_column" base_Property="ADDRESS_FLOOR" decimals="-127" name="FLOOR" size="0"/>
+<database:column xmi:id="BOAT_BUILTYEAR_database_column" base_Property="BOAT_BUILTYEAR" name="BUILTYEAR" size="4000"/>
+<database:column xmi:id="INCLUDEDEXTRAS_SERVICE_database_column" base_Property="INCLUDEDEXTRAS_SERVICE" decimals="0" name="SERVICE" size="19"/>
+<database:column xmi:id="BOAT_COMMISSIONPERCENT_database_column" base_Property="BOAT_COMMISSIONPERCENT" name="COMMISSIONPERCENT" size="126"/>
+<database:column xmi:id="EQUIPMENTCATEGORY_NAME_database_column" base_Property="EQUIPMENTCATEGORY_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="ADDRESS_ID_database_column" base_Property="ADDRESS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PRICE_CURRENCY_database_column" base_Property="PRICE_CURRENCY" decimals="0" name="CURRENCY" size="19"/>
+<database:column xmi:id="MAJOR_PROVINCE_FK_PROVINCE_database_column" base_Property="MAJOR_PROVINCE_FK_PROVINCE" name="ID"/>
+<database:column xmi:id="OPTIONALEXTRAS_SERVICE_database_column" base_Property="OPTIONALEXTRAS_SERVICE" decimals="0" name="SERVICE" size="19"/>
+<database:column xmi:id="BOATEQUIPMENT_BOAT_FK_BOAT_database_column" base_Property="BOATEQUIPMENT_BOAT_FK_BOAT" name="ID"/>
+<database:column xmi:id="PRODUCT_VALIDITYDATE_database_column" base_Property="PRODUCT_VALIDITYDATE" decimals="6" name="VALIDITYDATE" size="11"/>
+<database:column xmi:id="PRICE_VALIDITYDATE_database_column" base_Property="PRICE_VALIDITYDATE" decimals="6" name="VALIDITYDATE" size="11"/>
+<database:column xmi:id="PRODUCTRATING_RATINGCATEGOR_FK_RATINGCATEGORY_database_column" base_Property="PRODUCTRATING_RATINGCATEGOR_FK_RATINGCATEGORY" name="ID"/>
+<database:column xmi:id="ADDRESS_SUSER_database_column" base_Property="ADDRESS_SUSER" decimals="0" name="SUSER" size="19"/>
+<database:column xmi:id="BOAT_BOATID_database_column" base_Property="BOAT_BOATID" decimals="0" name="BOATID" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_TRANSFERPEOPLEFROM_database_column" base_Property="BOATEXTRAPRICE_TRANSFERPEOPLEFROM" decimals="-127" name="TRANSFERPEOPLEFROM" size="0"/>
+<database:column xmi:id="PRODUCTRATINGCATEGORIES_RATINGCATEGORY_database_column" base_Property="PRODUCTRATINGCATEGORIES_RATINGCATEGORY" decimals="0" name="RATINGCATEGORY" size="19"/>
+<database:column xmi:id="PAYMENTMETHOD_PRICE_FK_PRICE_database_column" base_Property="PAYMENTMETHOD_PRICE_FK_PRICE" name="ID"/>
+<database:column xmi:id="BOATEXTRAPRICE_MEANOFTRANSPORTATIONID_database_column" base_Property="BOATEXTRAPRICE_MEANOFTRANSPORTATIONID" decimals="0" name="MEANOFTRANSPORTATIONID" size="19"/>
+<database:column xmi:id="PRODUCT_PROVIDERPRODUCTS_database_column" base_Property="PRODUCT_PROVIDERPRODUCTS" decimals="0" name="PROVIDERPRODUCTS" size="19"/>
+<database:column xmi:id="SERVICE_PACK_FK_PACK_database_column" base_Property="SERVICE_PACK_FK_PACK" name="ID"/>
+<database:column xmi:id="BOATEXTRAS_ID_database_column" base_Property="BOATEXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="EXTRAS_EXCLUDEDEXTRA_FK_EXCLUDEDEXTRAS_database_column" base_Property="EXTRAS_EXCLUDEDEXTRA_FK_EXCLUDEDEXTRAS" name="ID"/>
+<database:column xmi:id="CURRENCY_VALIDITYDATE_database_column" base_Property="CURRENCY_VALIDITYDATE" decimals="6" name="VALIDITYDATE" size="11"/>
+<database:column xmi:id="CATEGORY_ID_database_column" base_Property="CATEGORY_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="AVAILABILITYSTATUS_LITERAL_database_column" base_Property="AVAILABILITYSTATUS_LITERAL" name="LITERAL" size="100"/>
+<database:column xmi:id="ORDEREDEXTRAS_ORDEREDPRODUCT_database_column" base_Property="ORDEREDEXTRAS_ORDEREDPRODUCT" decimals="0" name="ORDEREDPRODUCT" size="19"/>
+<database:column xmi:id="EXCLUDEDEXTRAS_ID_database_column" base_Property="EXCLUDEDEXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PRODUCT_EXPIRYDATE_database_column" base_Property="PRODUCT_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="PRICE_PRICEUNIT_database_column" base_Property="PRICE_PRICEUNIT" decimals="0" name="PRICEUNIT" size="19"/>
+<database:column xmi:id="BOAT_FUELCAPACITY_database_column" base_Property="BOAT_FUELCAPACITY" name="FUELCAPACITY" size="126"/>
+<database:column xmi:id="PRICEUNIT_ID_database_column" base_Property="PRICEUNIT_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="EQUIPMENTCATEGORY_ID_database_column" base_Property="EQUIPMENTCATEGORY_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATBASES_PRIMARY_database_column" base_Property="BOATBASES_PRIMARY" decimals="0" name="PRIMARY" size="1"/>
+<database:column xmi:id="INCLUDEDEXTRA_SERVICE_FK_SERVICE_database_column" base_Property="INCLUDEDEXTRA_SERVICE_FK_SERVICE" name="ID"/>
+<database:column xmi:id="BOATEQUIPMENTEXTRAS_BOATEQUIPMENTS_database_column" base_Property="BOATEQUIPMENTEXTRAS_BOATEQUIPMENTS" decimals="0" name="BOATEQUIPMENTS" size="19"/>
+<database:column xmi:id="BOAT_ID_database_column" base_Property="BOAT_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="EXCLUDEDEXTRAS_EXTRAS_database_column" base_Property="EXCLUDEDEXTRAS_EXTRAS" decimals="0" name="EXTRAS" size="19"/>
+<database:column xmi:id="CHARTERDATE_DATETO_database_column" base_Property="CHARTERDATE_DATETO" name="DATETO" size="7"/>
+<database:column xmi:id="CONTACTKIND_ID_database_column" base_Property="CONTACTKIND_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="REVIEW_ID_database_column" base_Property="REVIEW_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATEQUIPMENTEXTRAS_ID_database_column" base_Property="BOATEQUIPMENTEXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="SUSER_EXPIRYDATE_database_column" base_Property="SUSER_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="BOAT_VATPERCENT_database_column" base_Property="BOAT_VATPERCENT" name="VATPERCENT" size="126"/>
+<database:column xmi:id="SORDER_ID_database_column" base_Property="SORDER_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATEXTRAPRIC_BOATEXTRAS_FK_BOATEXTRAS_database_column" base_Property="BOATEXTRAPRIC_BOATEXTRAS_FK_BOATEXTRAS" name="ID"/>
+<database:column xmi:id="BOATIMAGES_IMAGE_database_column" base_Property="BOATIMAGES_IMAGE" name="IMAGE" size="4000"/>
+<database:column xmi:id="SUSER_ID_database_column" base_Property="SUSER_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOAT_BOATNAME_database_column" base_Property="BOAT_BOATNAME" name="BOATNAME" size="4000"/>
+<database:column xmi:id="MAJOR_PROVINCE_database_column" base_Property="MAJOR_PROVINCE" decimals="0" name="PROVINCE" size="19"/>
+<database:column xmi:id="BOAT_FLEETOPERATORID_database_column" base_Property="BOAT_FLEETOPERATORID" decimals="0" name="FLEETOPERATORID" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_TRANSFERENDLOCATION_database_column" base_Property="BOATEXTRAPRICE_TRANSFERENDLOCATION" name="TRANSFERENDLOCATION" size="126"/>
+<database:column xmi:id="REVIEW_ORDEREDPRODUC_FK_ORDEREDPRODUCT_database_column" base_Property="REVIEW_ORDEREDPRODUC_FK_ORDEREDPRODUCT" name="ID"/>
+<database:column xmi:id="ORDERSTATUS_LITERAL_database_column" base_Property="ORDERSTATUS_LITERAL" name="LITERAL" size="100"/>
+<database:column xmi:id="CATEGORY_EXPIRYDATE_database_column" base_Property="CATEGORY_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="CHARTERDATE_DATEFROM_database_column" base_Property="CHARTERDATE_DATEFROM" name="DATEFROM" size="7"/>
+<database:column xmi:id="ADDRESS_CONTACTKIND_database_column" base_Property="ADDRESS_CONTACTKIND" decimals="0" name="CONTACTKIND" size="19"/>
+<database:column xmi:id="BASE_ID_database_column" base_Property="BASE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="ORDEREDEXTRAS_OPTIONALEXTRAS_database_column" base_Property="ORDEREDEXTRAS_OPTIONALEXTRAS" decimals="0" name="OPTIONALEXTRAS" size="19"/>
+<database:column xmi:id="AVAILABILITY_AVAILABILITYS_FK_AVAILABILITYSTATUS_database_column" base_Property="AVAILABILITY_AVAILABILITYS_FK_AVAILABILITYSTATUS" name="ID"/>
+<database:column xmi:id="SORDER_ORDERDATE_database_column" base_Property="SORDER_ORDERDATE" decimals="6" name="ORDERDATE" size="11"/>
+<database:column xmi:id="EXTRAS_ID_database_column" base_Property="EXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATKIND_LITERAL_database_column" base_Property="BOATKIND_LITERAL" name="LITERAL" size="100"/>
+<database:column xmi:id="BOAT_BEAM_database_column" base_Property="BOAT_BEAM" name="BEAM" size="126"/>
+<database:column xmi:id="ADDRESS_NAME_database_column" base_Property="ADDRESS_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="CHARTERDATE_ID_database_column" base_Property="CHARTERDATE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="ORDEREDPRODUCT_PRODUCT_database_column" base_Property="ORDEREDPRODUCT_PRODUCT" decimals="0" name="PRODUCT" size="19"/>
+<database:column xmi:id="STARTINGBASES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE_database_column" base_Property="STARTINGBASES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" name="ID"/>
+<database:column xmi:id="ADDRESS_VILLAGE_FK_VILLAGE_database_column" base_Property="ADDRESS_VILLAGE_FK_VILLAGE" name="ID"/>
+<database:column xmi:id="INCLUDEDEXTRAS_VALIDITYDATE_database_column" base_Property="INCLUDEDEXTRAS_VALIDITYDATE" decimals="6" name="VALIDITYDATE" size="11"/>
+<database:column xmi:id="RATING_RATINGCATEGORY_database_column" base_Property="RATING_RATINGCATEGORY" decimals="0" name="RATINGCATEGORY" size="19"/>
+<database:column xmi:id="PRODUCTRATINGCATEGORIES_ID_database_column" base_Property="PRODUCTRATINGCATEGORIES_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="SORDER_PAYMENTDATE_database_column" base_Property="SORDER_PAYMENTDATE" decimals="6" name="PAYMENTDATE" size="11"/>
+<database:column xmi:id="PRODUCT_NAME_database_column" base_Property="PRODUCT_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="AVAILABILITY_DATETO_database_column" base_Property="AVAILABILITY_DATETO" decimals="6" name="DATETO" size="11"/>
+<database:column xmi:id="RATING_REVIEW_database_column" base_Property="RATING_REVIEW" decimals="0" name="REVIEW" size="19"/>
+<database:column xmi:id="PRICEUNIT_PRICE_FK_PRICEUNIT_database_column" base_Property="PRICEUNIT_PRICE_FK_PRICEUNIT" name="ID"/>
+<database:column xmi:id="RATINGVALUE_ID_database_column" base_Property="RATINGVALUE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="ORDERSTATUS_ID_database_column" base_Property="ORDERSTATUS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="AVAILABILITY_DATEFROM_database_column" base_Property="AVAILABILITY_DATEFROM" decimals="6" name="DATEFROM" size="11"/>
+<database:column xmi:id="CHARTERDATES_CHARTERDATE_FK_CHARTERDATE_database_column" base_Property="CHARTERDATES_CHARTERDATE_FK_CHARTERDATE" name="ID"/>
+<database:column xmi:id="BOATKIND_BOAT_FK_BOATKIND_database_column" base_Property="BOATKIND_BOAT_FK_BOATKIND" name="ID"/>
+<database:column xmi:id="BOAT_YEAROFLASTRECONSTRUCTION_database_column" base_Property="BOAT_YEAROFLASTRECONSTRUCTION" name="YEAROFLASTRECONSTRUCTION" size="4000"/>
+<database:column xmi:id="EXCLUDEDEXTRA_EXTRAS_FK_EXTRAS_database_column" base_Property="EXCLUDEDEXTRA_EXTRAS_FK_EXTRAS" name="ID"/>
+<database:column xmi:id="ADDRESS_VILLAGE_database_column" base_Property="ADDRESS_VILLAGE" decimals="0" name="VILLAGE" size="19"/>
+<database:column xmi:id="BOATEQUIPMENTS_BOATEQUIPMENT_database_column" base_Property="BOATEQUIPMENTS_BOATEQUIPMENT" decimals="0" name="BOATEQUIPMENT" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_ID_database_column" base_Property="BOATEXTRAPRICE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="AVAILABILITYSTATUS_ID_database_column" base_Property="AVAILABILITYSTATUS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_NAME_database_column" base_Property="BOATEXTRAPRICE_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="PROVINCE_COUNTRY_FK_COUNTRY_database_column" base_Property="PROVINCE_COUNTRY_FK_COUNTRY" name="ID"/>
+<database:column xmi:id="CURRENCY_ID_database_column" base_Property="CURRENCY_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOAT_WATERCAPACITY_database_column" base_Property="BOAT_WATERCAPACITY" name="WATERCAPACITY" size="126"/>
+<database:column xmi:id="PAYMENTMETHOD_PAYMENTMETHOD_FK_PAYMENTMETHOD_database_column" base_Property="PAYMENTMETHOD_PAYMENTMETHOD_FK_PAYMENTMETHOD" name="ID"/>
+<database:column xmi:id="OPTIONALEXTRAS_ID_database_column" base_Property="OPTIONALEXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PAYMENTMETHODS_PRICE_database_column" base_Property="PAYMENTMETHODS_PRICE" decimals="0" name="PRICE" size="19"/>
+<database:column xmi:id="BOAT_BOATKIND_database_column" base_Property="BOAT_BOATKIND" decimals="0" name="BOATKIND" size="19"/>
+<database:column xmi:id="ORDEREDPRODUCT_SORDER_database_column" base_Property="ORDEREDPRODUCT_SORDER" decimals="0" name="SORDER" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_TRANSFERSTARTLOCATION_database_column" base_Property="BOATEXTRAPRICE_TRANSFERSTARTLOCATION" name="TRANSFERSTARTLOCATION" size="126"/>
+<database:column xmi:id="BOAT_HULLLENGTH_database_column" base_Property="BOAT_HULLLENGTH" name="HULLLENGTH" size="126"/>
+<database:column xmi:id="BOAT_REALTIMEAVAILABILITY_database_column" base_Property="BOAT_REALTIMEAVAILABILITY" decimals="0" name="REALTIMEAVAILABILITY" size="1"/>
+<database:column xmi:id="ADDRESS_POSTALCODE_database_column" base_Property="ADDRESS_POSTALCODE" name="POSTALCODE" size="4000"/>
+<database:column xmi:id="ADDRESS_EXPIRYDATE_database_column" base_Property="ADDRESS_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="PRICEUNIT_LITERAL_database_column" base_Property="PRICEUNIT_LITERAL" name="LITERAL" size="100"/>
+<database:column xmi:id="COUNTRY_NAME_database_column" base_Property="COUNTRY_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="RATINGVALUE_LITERAL_database_column" base_Property="RATINGVALUE_LITERAL" name="LITERAL" size="100"/>
+<database:column xmi:id="AVAILABILITY_DISCOUNTPERCENT_database_column" base_Property="AVAILABILITY_DISCOUNTPERCENT" name="DISCOUNTPERCENT" size="126"/>
+<database:column xmi:id="OPTIONALEXTRA_SERVICE_FK_SERVICE_database_column" base_Property="OPTIONALEXTRA_SERVICE_FK_SERVICE" name="ID"/>
+<database:column xmi:id="PAYMENTMETHODS_PAYMENTMETHOD_database_column" base_Property="PAYMENTMETHODS_PAYMENTMETHOD" decimals="0" name="PAYMENTMETHOD" size="19"/>
+<database:column xmi:id="ORDEREDPRODUCT_ID_database_column" base_Property="ORDEREDPRODUCT_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BASE_NAME_database_column" base_Property="BASE_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="COUNTRY_ID_database_column" base_Property="COUNTRY_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="RATINGCATEGORY_PARENTCATEGORY_database_column" base_Property="RATINGCATEGORY_PARENTCATEGORY" decimals="0" name="PARENTCATEGORY" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_PRICEREFUNDABLE_database_column" base_Property="BOATEXTRAPRICE_PRICEREFUNDABLE" name="PRICEREFUNDABLE" size="126"/>
+<database:column xmi:id="INCLUDEDEXTRAS_EXPIRYDATE_database_column" base_Property="INCLUDEDEXTRAS_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="SUBCATEGORIES_PARENTCATEGOR_FK_PARENTCATEGORY_database_column" base_Property="SUBCATEGORIES_PARENTCATEGOR_FK_PARENTCATEGORY" name="ID"/>
+<database:column xmi:id="CATEGORY_PARENTCATEGORY_database_column" base_Property="CATEGORY_PARENTCATEGORY" decimals="0" name="PARENTCATEGORY" size="19"/>
+<database:column xmi:id="AVAILABILITY_PRODUCT_FK_PRODUCT_database_column" base_Property="AVAILABILITY_PRODUCT_FK_PRODUCT" name="ID"/>
+<database:column xmi:id="COUNTRY_ISOSHORT_database_column" base_Property="COUNTRY_ISOSHORT" name="ISOSHORT" size="4000"/>
+<database:column xmi:id="BASE_LONGITUDE_database_column" base_Property="BASE_LONGITUDE" name="LONGITUDE" size="126"/>
+<database:column xmi:id="SERVICE_CATEGORY_FK_CATEGORY_database_column" base_Property="SERVICE_CATEGORY_FK_CATEGORY" name="ID"/>
+<database:column xmi:id="BOATEQUIPMENTS_ID_database_column" base_Property="BOATEQUIPMENTS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PRODUCT_ID_database_column" base_Property="PRODUCT_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="CURRENCY_NAME_database_column" base_Property="CURRENCY_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="CHARTERDATES_ID_database_column" base_Property="CHARTERDATES_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATEQUIPMENT_EQUIPMENTCATE_FK_EQUIPMENTCATEGORY_database_column" base_Property="BOATEQUIPMENT_EQUIPMENTCATE_FK_EQUIPMENTCATEGORY" name="ID"/>
+<database:column xmi:id="REVIEW_ORDEREDPRODUCT_database_column" base_Property="REVIEW_ORDEREDPRODUCT" decimals="0" name="ORDEREDPRODUCT" size="19"/>
+<database:column xmi:id="OPTIONALEXTRAS_EXPIRYDATE_database_column" base_Property="OPTIONALEXTRAS_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="AREA_NAME_database_column" base_Property="AREA_NAME" name="NAME" size="4000"/>
+<database:column xmi:id="PRODUCT_PACK_database_column" base_Property="PRODUCT_PACK" decimals="0" name="PACK" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_BOATEXTRAS_database_column" base_Property="BOATEXTRAPRICE_BOATEXTRAS" decimals="0" name="BOATEXTRAS" size="19"/>
+<database:column xmi:id="AVAILABILITY_ID_database_column" base_Property="AVAILABILITY_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="ORDEREDPRODUCT_ORDERSTATUS_database_column" base_Property="ORDEREDPRODUCT_ORDERSTATUS" decimals="0" name="ORDERSTATUS" size="19"/>
+<database:column xmi:id="ORDEREDEXTRAS_ID_database_column" base_Property="ORDEREDEXTRAS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATEXTRABASES_ID_database_column" base_Property="BOATEXTRABASES_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PROVIDERPRODUCTS_ID_database_column" base_Property="PROVIDERPRODUCTS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATIMAGES_ID_database_column" base_Property="BOATIMAGES_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="PRICE_ID_database_column" base_Property="PRICE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="INCLUDEDEXTRA_EXTRAS_FK_EXTRAS_database_column" base_Property="INCLUDEDEXTRA_EXTRAS_FK_EXTRAS" name="ID"/>
+<database:column xmi:id="SUSER_LOGIN_database_column" base_Property="SUSER_LOGIN" name="LOGIN" size="4000"/>
+<database:column xmi:id="SORDER_SUSER_database_column" base_Property="SORDER_SUSER" decimals="0" name="SUSER" size="19"/>
+<database:column xmi:id="SORDER_SUSER_FK_SUSER_database_column" base_Property="SORDER_SUSER_FK_SUSER" name="ID"/>
+<database:column xmi:id="PRODUCT_DESCRIPTION_database_column" base_Property="PRODUCT_DESCRIPTION" name="DESCRIPTION" size="4000"/>
+<database:column xmi:id="ORDEREDPRODUCT_QUANTITY_database_column" base_Property="ORDEREDPRODUCT_QUANTITY" decimals="-127" name="QUANTITY" size="0"/>
+<database:column xmi:id="PROVIDERPRODU_PROVIDER_FK_PROVIDER_database_column" base_Property="PROVIDERPRODU_PROVIDER_FK_PROVIDER" name="ID"/>
+<database:column xmi:id="ORDEREDEXTRAS_QUANTITY_database_column" base_Property="ORDEREDEXTRAS_QUANTITY" decimals="-127" name="QUANTITY" size="0"/>
+<database:column xmi:id="BOATEQUIPMENT_EQUIPMENTCATEGORY_database_column" base_Property="BOATEQUIPMENT_EQUIPMENTCATEGORY" decimals="0" name="EQUIPMENTCATEGORY" size="19"/>
+<database:column xmi:id="ADDRESS_OTHER_database_column" base_Property="ADDRESS_OTHER" name="OTHER" size="4000"/>
+<database:column xmi:id="PAYMENTMETHODS_ID_database_column" base_Property="PAYMENTMETHODS_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="ORDEREDEXTRAS_ORDEREDPRODUC_FK_ORDEREDPRODUCT_database_column" base_Property="ORDEREDEXTRAS_ORDEREDPRODUC_FK_ORDEREDPRODUCT" name="ID"/>
+<database:column xmi:id="PRICE_SERVICE_FK_SERVICE_database_column" base_Property="PRICE_SERVICE_FK_SERVICE" name="ID"/>
+<database:column xmi:id="ADDRESS_SUSER_FK_SUSER_database_column" base_Property="ADDRESS_SUSER_FK_SUSER" name="ID"/>
+<database:column xmi:id="VILLAGE_ID_database_column" base_Property="VILLAGE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="CHARTERDATES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE_database_column" base_Property="CHARTERDATES_BOATEXTRAPRIC_FK_BOATEXTRAPRICE" name="ID"/>
+<database:column xmi:id="BOATEQUIPMENTS_BOAT_database_column" base_Property="BOATEQUIPMENTS_BOAT" decimals="0" name="BOAT" size="19"/>
+<database:column xmi:id="BOAT_BERTHS_database_column" base_Property="BOAT_BERTHS" name="BERTHS" size="4000"/>
+<database:column xmi:id="ORDEREDPRODUC_PRODUCT_FK_PRODUCT_database_column" base_Property="ORDEREDPRODUC_PRODUCT_FK_PRODUCT" name="ID"/>
+<database:column xmi:id="RATING_RATINGVALUE_FK_RATINGVALUE_database_column" base_Property="RATING_RATINGVALUE_FK_RATINGVALUE" name="ID"/>
+<database:column xmi:id="BOAT_ENGINE_database_column" base_Property="BOAT_ENGINE" name="ENGINE" size="4000"/>
+<database:column xmi:id="BOAT_BOATMODELNAME_database_column" base_Property="BOAT_BOATMODELNAME" name="BOATMODELNAME" size="4000"/>
+<database:column xmi:id="ORDEREDEXTRAS_OPTIONALEXTRA_FK_OPTIONALEXTRAS_database_column" base_Property="ORDEREDEXTRAS_OPTIONALEXTRA_FK_OPTIONALEXTRAS" name="ID"/>
+<database:column xmi:id="ADDRESS_CONTACTKIND_FK_CONTACTKIND_database_column" base_Property="ADDRESS_CONTACTKIND_FK_CONTACTKIND" name="ID"/>
+<database:column xmi:id="BOAT_COMMISSIONBASEDONNETPRICE_database_column" base_Property="BOAT_COMMISSIONBASEDONNETPRICE" decimals="0" name="COMMISSIONBASEDONNETPRICE" size="1"/>
+<database:column xmi:id="BOAT_BOATBRANDNAME_database_column" base_Property="BOAT_BOATBRANDNAME" name="BOATBRANDNAME" size="4000"/>
+<database:column xmi:id="PRODUCT_PROVIDERPRODU_FK_PROVIDERPRODUCTS_database_column" base_Property="PRODUCT_PROVIDERPRODU_FK_PROVIDERPRODUCTS" name="ID"/>
+<database:column xmi:id="BOATIMAGES_BOAT_database_column" base_Property="BOATIMAGES_BOAT" decimals="0" name="BOAT" size="19"/>
+<database:column xmi:id="BASE_AREA_database_column" base_Property="BASE_AREA" decimals="0" name="AREA" size="19"/>
+<database:column xmi:id="BOATKIND_ID_database_column" base_Property="BOATKIND_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="VILLAGE_MAJOR_FK_MAJOR_database_column" base_Property="VILLAGE_MAJOR_FK_MAJOR" name="ID"/>
+<database:column xmi:id="BOAT_CABINS_database_column" base_Property="BOAT_CABINS" decimals="-127" name="CABINS" size="0"/>
+<database:column xmi:id="EXPERIENCE_ID_database_column" base_Property="EXPERIENCE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATBASES_BASE_database_column" base_Property="BOATBASES_BASE" decimals="0" name="BASE" size="19"/>
+<database:column xmi:id="BOATEXTRAPRICE_DESCRIPTION_database_column" base_Property="BOATEXTRAPRICE_DESCRIPTION" name="DESCRIPTION" size="4000"/>
+<database:column xmi:id="BOATEXTRAPRICE_INCLUDEDINCHARTERPRICE_database_column" base_Property="BOATEXTRAPRICE_INCLUDEDINCHARTERPRICE" decimals="0" name="INCLUDEDINCHARTERPRICE" size="1"/>
+<database:column xmi:id="SUSER_PASSPORT_database_column" base_Property="SUSER_PASSPORT" name="PASSPORT" size="4000"/>
+<database:column xmi:id="BOAT_OVERALLLENGTH_database_column" base_Property="BOAT_OVERALLLENGTH" name="OVERALLLENGTH" size="126"/>
+<database:column xmi:id="MAJOR_ID_database_column" base_Property="MAJOR_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOATEQUIPMENT_BOATEQUIPMENT_FK_BOATEQUIPMENTS_database_column" base_Property="BOATEQUIPMENT_BOATEQUIPMENT_FK_BOATEQUIPMENTS" name="ID"/>
+<database:column xmi:id="OPTIONALEXTRAS_EXTRAS_database_column" base_Property="OPTIONALEXTRAS_EXTRAS" decimals="0" name="EXTRAS" size="19"/>
+<database:column xmi:id="ADDRESS_NUM_database_column" base_Property="ADDRESS_NUM" decimals="-127" name="NUM" size="0"/>
+<database:column xmi:id="PROVIDERPRODUCTS_PROVIDER_database_column" base_Property="PROVIDERPRODUCTS_PROVIDER" decimals="0" name="PROVIDER" size="19"/>
+<database:column xmi:id="CHARTERDATES_BOATEXTRAPRICE_database_column" base_Property="CHARTERDATES_BOATEXTRAPRICE" decimals="0" name="BOATEXTRAPRICE" size="19"/>
+<database:column xmi:id="BASE_LATITUDE_database_column" base_Property="BASE_LATITUDE" name="LATITUDE" size="126"/>
+<database:column xmi:id="BOATEXTRAPRICE_APPROXIMATEPRICE_database_column" base_Property="BOATEXTRAPRICE_APPROXIMATEPRICE" decimals="0" name="APPROXIMATEPRICE" size="1"/>
+<database:column xmi:id="BOAT_WEIGHT_database_column" base_Property="BOAT_WEIGHT" name="WEIGHT" size="126"/>
+<database:column xmi:id="ORDEREDPRODUC_SORDER_FK_SORDER_database_column" base_Property="ORDEREDPRODUC_SORDER_FK_SORDER" name="ID"/>
+<database:column xmi:id="CONTACTKIND_LITERAL_database_column" base_Property="CONTACTKIND_LITERAL" name="LITERAL" size="100"/>
+<database:column xmi:id="BASE_BOAT_FK_BOAT_database_column" base_Property="BASE_BOAT_FK_BOAT" name="ID"/>
+<database:column xmi:id="BOATEXTRABASE_BASE_FK_BASE_database_column" base_Property="BOATEXTRABASE_BASE_FK_BASE" name="ID"/>
+<database:column xmi:id="PRODUCT_CATEGORY_database_column" base_Property="PRODUCT_CATEGORY" decimals="0" name="CATEGORY" size="19"/>
+<database:column xmi:id="SUSER_SURNAME_database_column" base_Property="SUSER_SURNAME" name="SURNAME" size="4000"/>
+<database:column xmi:id="PROVINCE_COUNTRY_database_column" base_Property="PROVINCE_COUNTRY" decimals="0" name="COUNTRY" size="19"/>
+<database:column xmi:id="PRICE_SERVICE_database_column" base_Property="PRICE_SERVICE" decimals="0" name="SERVICE" size="19"/>
+<database:column xmi:id="SERVICE_ID_database_column" base_Property="SERVICE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="ORDEREDPRODUC_ORDERSTATUS_FK_ORDERSTATUS_database_column" base_Property="ORDEREDPRODUC_ORDERSTATUS_FK_ORDERSTATUS" name="ID"/>
+<database:column xmi:id="BASE_AREA_FK_AREA_database_column" base_Property="BASE_AREA_FK_AREA" name="ID"/>
+<database:column xmi:id="BOAT_TOILETS_database_column" base_Property="BOAT_TOILETS" decimals="-127" name="TOILETS" size="0"/>
+<database:column xmi:id="CATEGORY_VALIDITYDATE_database_column" base_Property="CATEGORY_VALIDITYDATE" decimals="6" name="VALIDITYDATE" size="11"/>
+<database:column xmi:id="OPTIONALEXTRA_EXTRAS_FK_EXTRAS_database_column" base_Property="OPTIONALEXTRA_EXTRAS_FK_EXTRAS" name="ID"/>
+<database:column xmi:id="AREA_ID_database_column" base_Property="AREA_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="AREA_EXPIRYDATE_database_column" base_Property="AREA_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="CURRENCY_SYMBOL_database_column" base_Property="CURRENCY_SYMBOL" name="SYMBOL" size="4000"/>
+<database:column xmi:id="ADDRESS_DOOR_database_column" base_Property="ADDRESS_DOOR" name="DOOR" size="4000"/>
+<database:column xmi:id="PACK_ID_database_column" base_Property="PACK_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOAT_BOATBRANDID_database_column" base_Property="BOAT_BOATBRANDID" decimals="0" name="BOATBRANDID" size="19"/>
+<database:column xmi:id="SORDER_EXTERNALID_database_column" base_Property="SORDER_EXTERNALID" name="EXTERNALID" size="4000"/>
+<database:column xmi:id="AVAILABILITY_PRODUCT_database_column" base_Property="AVAILABILITY_PRODUCT" decimals="0" name="PRODUCT" size="19"/>
+<database:column xmi:id="BOAT_LENGTHOFWATERLINE_database_column" base_Property="BOAT_LENGTHOFWATERLINE" name="LENGTHOFWATERLINE" size="126"/>
+<database:column xmi:id="BOATEXTRABASES_BOATEXTRAPRICE_database_column" base_Property="BOATEXTRABASES_BOATEXTRAPRICE" decimals="0" name="BOATEXTRAPRICE" size="19"/>
+<database:column xmi:id="CURRENCY_EXPIRYDATE_database_column" base_Property="CURRENCY_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="BOATBASES_BASE_FK_BASE_database_column" base_Property="BOATBASES_BASE_FK_BASE" name="ID"/>
+<database:column xmi:id="SUSER_NATIONALID_database_column" base_Property="SUSER_NATIONALID" name="NATIONALID" size="4000"/>
+<database:column xmi:id="EXTRAS_EXPIRYDATE_database_column" base_Property="EXTRAS_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="PROVINCE_ID_database_column" base_Property="PROVINCE_ID" decimals="0" name="ID" size="19"/>
+<database:column xmi:id="BOAT_BALLAST_database_column" base_Property="BOAT_BALLAST" name="BALLAST" size="126"/>
+<database:column xmi:id="PRICE_EXPIRYDATE_database_column" base_Property="PRICE_EXPIRYDATE" decimals="6" name="EXPIRYDATE" size="11"/>
+<database:column xmi:id="CURRENCY_ISONAME_database_column" base_Property="CURRENCY_ISONAME" name="ISONAME" size="4000"/>
+<database:column xmi:id="DESTINATION_ID_database_column" base_Property="DESTINATION_ID" decimals="0" name="ID" size="19"/>
+<database:table xmi:id="PROVINCE_database_table" base_Class="PROVINCE" name="PROVINCE"/>
+<database:table xmi:id="DESTINATION_database_table" base_Class="DESTINATION" name="DESTINATION"/>
+<database:table xmi:id="BOATEXTRAS_database_table" base_Class="BOATEXTRAS" name="BOATEXTRAS"/>
+<database:table xmi:id="BOATEXTRAPRICE_database_table" base_Class="BOATEXTRAPRICE" name="BOATEXTRAPRICE"/>
+<database:table xmi:id="BOATKIND_database_table" base_Class="BOATKIND" name="BOATKIND"/>
+<database:table xmi:id="BOATEQUIPMENTS_database_table" base_Class="BOATEQUIPMENTS" name="BOATEQUIPMENTS"/>
+<database:table xmi:id="RATINGCATEGORY_database_table" base_Class="RATINGCATEGORY" name="RATINGCATEGORY"/>
+<database:table xmi:id="PAYMENTMETHOD_database_table" base_Class="PAYMENTMETHOD" name="PAYMENTMETHOD"/>
+<database:table xmi:id="OPTIONALEXTRAS_database_table" base_Class="OPTIONALEXTRAS" name="OPTIONALEXTRAS"/>
+<database:table xmi:id="CATEGORY_database_table" base_Class="CATEGORY" name="CATEGORY"/>
+<database:table xmi:id="SUSER_database_table" base_Class="SUSER" name="SUSER"/>
+<database:table xmi:id="PRODUCT_database_table" base_Class="PRODUCT" name="PRODUCT"/>
+<database:table xmi:id="COUNTRY_database_table" base_Class="COUNTRY" name="COUNTRY"/>
+<database:table xmi:id="ORDERSTATUS_database_table" base_Class="ORDERSTATUS" name="ORDERSTATUS"/>
+<database:table xmi:id="EXPERIENCE_database_table" base_Class="EXPERIENCE" name="EXPERIENCE"/>
+<database:table xmi:id="BOATIMAGES_database_table" base_Class="BOATIMAGES" name="BOATIMAGES"/>
+<database:table xmi:id="EQUIPMENTCATEGORY_database_table" base_Class="EQUIPMENTCATEGORY" name="EQUIPMENTCATEGORY"/>
+<database:table xmi:id="MOORING_database_table" base_Class="MOORING" name="MOORING"/>
+<database:table xmi:id="ADDRESS_database_table" base_Class="ADDRESS" name="ADDRESS"/>
+<database:table xmi:id="RATING_database_table" base_Class="RATING" name="RATING"/>
+<database:table xmi:id="CONTACTKIND_database_table" base_Class="CONTACTKIND" name="CONTACTKIND"/>
+<database:table xmi:id="MAJOR_database_table" base_Class="MAJOR" name="MAJOR"/>
+<database:table xmi:id="EXTRAS_database_table" base_Class="EXTRAS" name="EXTRAS"/>
+<database:table xmi:id="BOATBASES_database_table" base_Class="BOATBASES" name="BOATBASES"/>
+<database:table xmi:id="ORDEREDEXTRAS_database_table" base_Class="ORDEREDEXTRAS" name="ORDEREDEXTRAS"/>
+<database:table xmi:id="RATINGVALUE_database_table" base_Class="RATINGVALUE" name="RATINGVALUE"/>
+<database:table xmi:id="PRICEUNIT_database_table" base_Class="PRICEUNIT" name="PRICEUNIT"/>
+<database:table xmi:id="SORDER_database_table" base_Class="SORDER" name="SORDER"/>
+<database:table xmi:id="SERVICE_database_table" base_Class="SERVICE" name="SERVICE"/>
+<database:table xmi:id="BOATEQUIPMENT_database_table" base_Class="BOATEQUIPMENT" name="BOATEQUIPMENT"/>
+<database:table xmi:id="PACK_database_table" base_Class="PACK" name="PACK"/>
+<database:table xmi:id="AVAILABILITYSTATUS_database_table" base_Class="AVAILABILITYSTATUS" name="AVAILABILITYSTATUS"/>
+<database:table xmi:id="PRODUCTRATINGCATEGORIES_database_table" base_Class="PRODUCTRATINGCATEGORIES" name="PRODUCTRATINGCATEGORIES"/>
+<database:table xmi:id="PROVIDERPRODUCTS_database_table" base_Class="PROVIDERPRODUCTS" name="PROVIDERPRODUCTS"/>
+<database:table xmi:id="PRICE_database_table" base_Class="PRICE" name="PRICE"/>
+<database:table xmi:id="BASE_database_table" base_Class="BASE" name="BASE"/>
+<database:table xmi:id="AVAILABILITY_database_table" base_Class="AVAILABILITY" name="AVAILABILITY"/>
+<database:table xmi:id="PAYMENTMETHODS_database_table" base_Class="PAYMENTMETHODS" name="PAYMENTMETHODS"/>
+<database:table xmi:id="INCLUDEDEXTRAS_database_table" base_Class="INCLUDEDEXTRAS" name="INCLUDEDEXTRAS"/>
+<database:table xmi:id="CURRENCY_database_table" base_Class="CURRENCY" name="CURRENCY"/>
+<database:table xmi:id="ORDEREDPRODUCT_database_table" base_Class="ORDEREDPRODUCT" name="ORDEREDPRODUCT"/>
+<database:table xmi:id="BOAT_database_table" base_Class="BOAT" name="BOAT"/>
+<database:table xmi:id="VILLAGE_database_table" base_Class="VILLAGE" name="VILLAGE"/>
+<database:table xmi:id="REVIEW_database_table" base_Class="REVIEW" name="REVIEW"/>
+<database:table xmi:id="BOATEQUIPMENTEXTRAS_database_table" base_Class="BOATEQUIPMENTEXTRAS" name="BOATEQUIPMENTEXTRAS"/>
+<database:table xmi:id="EXCLUDEDEXTRAS_database_table" base_Class="EXCLUDEDEXTRAS" name="EXCLUDEDEXTRAS"/>
+<database:table xmi:id="BOATSERVICEEXTRAS_database_table" base_Class="BOATSERVICEEXTRAS" name="BOATSERVICEEXTRAS"/>
+<database:table xmi:id="CHARTERDATE_database_table" base_Class="CHARTERDATE" name="CHARTERDATE"/>
+<database:table xmi:id="BOATEXTRABASES_database_table" base_Class="BOATEXTRABASES" name="BOATEXTRABASES"/>
+<database:table xmi:id="AREA_database_table" base_Class="AREA" name="AREA"/>
+<database:table xmi:id="CHARTERDATES_database_table" base_Class="CHARTERDATES" name="CHARTERDATES"/>
+</xmi:XMI>
