@@ -1,5 +1,9 @@
 package net.samsarasoftware.jdbc2uml;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
 /*-
  * #%L
  * net.samsarasoftware.jdbc2uml
@@ -67,19 +71,38 @@ public final class Jdbc2uml implements LoginCallback{
 	String catalogPattern   = null;
 	String schemaPattern    = null;    
 	String DTYPE = "DTYPE";
-	
+	PrintStream outputStream;
    Connection c_origen = null;
    
    Hashtable<String, PrimaryKeyMetaData> primaryKeys=new Hashtable<String, PrimaryKeyMetaData>();
    Hashtable<String,String> joinedTableGeneralizations=new Hashtable<String,String>();
    Hashtable<String,Hashtable<String,Hashtable<String,String>>> profiles=new Hashtable<String,Hashtable<String,Hashtable<String,String>>>();
 
-   public Jdbc2uml(String[] args) throws Exception{
-	   
+   
+   
+   public Jdbc2uml(String jDBC_DRIVER_ORIGEN, String dB_URL_ORIGEN, String uSER_ORIGEN, String pASS_ORIGEN,
+		String catalogPattern, String schemaPattern, String dTYPE, String outputFileName) throws FileNotFoundException {
+	super();
+	JDBC_DRIVER_ORIGEN = jDBC_DRIVER_ORIGEN;
+	DB_URL_ORIGEN = dB_URL_ORIGEN;
+	USER_ORIGEN = uSER_ORIGEN;
+	PASS_ORIGEN = pASS_ORIGEN;
+	this.catalogPattern = catalogPattern;
+	this.schemaPattern = schemaPattern;
+	DTYPE = dTYPE;
+	if(outputFileName!=null){
+		File f=new File(outputFileName);
+		f.getParentFile().mkdirs();
+		outputStream=new PrintStream(f);
+	}else{
+		outputStream=System.out;
+	}
+}
+
+
+public Jdbc2uml(String[] args) throws Exception{
 	   parseParams(args);
-	   profiles.put("column",new Hashtable<String,Hashtable<String,String>>());
-	   profiles.put("foreignKey",new Hashtable<String,Hashtable<String,String>>());
-	   profiles.put("table",new Hashtable<String,Hashtable<String,String>>());
+	   outputStream=System.out;
 	   run();   
    }
    
@@ -113,7 +136,7 @@ public final class Jdbc2uml implements LoginCallback{
 	private void printUsage() throws Exception {
 		throw new Exception("Errores en los argumentos. Uso:\n java -jar <nombrejar>.jar \n "
 				+ "-url_origen <URL JDBC without user nor pass >\n "
-				+ "-driver <oracle.jdbc.driver.OracleDriver>"	
+				+ "-driver <oracle.jdbc.driver.OracleDriver | com.mysql.cj.jdbc.Driver | >"	
 				+ "[-catalog <catalog>]"
 				+ "[-schema <schema>]"
 				+ "[-user <user>]"
@@ -124,6 +147,11 @@ public final class Jdbc2uml implements LoginCallback{
 
 	
 	private final void configure() throws SQLException, ClassNotFoundException {
+	   profiles.put("column",new Hashtable<String,Hashtable<String,String>>());
+	   profiles.put("foreignKey",new Hashtable<String,Hashtable<String,String>>());
+	   profiles.put("table",new Hashtable<String,Hashtable<String,String>>());
+
+		
 		if(USER_ORIGEN==null) CredencialesWindow.login(this);
 		
 		Class.forName(JDBC_DRIVER_ORIGEN);
@@ -201,7 +229,7 @@ public final class Jdbc2uml implements LoginCallback{
 	}
 
 
-	private final void run() throws SQLException, ClassNotFoundException {
+	public final void run() throws SQLException, ClassNotFoundException {
 
 		configure();
 		
@@ -248,7 +276,7 @@ public final class Jdbc2uml implements LoginCallback{
 		}
 
 		finalizeModel(catalogPattern, schemaPattern,buf);
-		System.out.println(buf.toString());		
+		outputStream.println(buf.toString());		
 	}
 
 
@@ -277,8 +305,13 @@ public final class Jdbc2uml implements LoginCallback{
 		b.append("<standard:Entity xmi:id=\"_fUo-QBt1Eea5NKvb7KrMNA\" base_Component=\"entities\"/>\n");
 		b.append("<standard:Subsystem xmi:id=\"_fUo-QBt1Eea5NKvb7KrMNA\" base_Component=\"subsystem\"/>\n");
 		b.append("<standard:Implement xmi:id=\"_fUo-QBt1Eea5NKvb7KrLNA\" base_Component=\"subsystem\"/>\n");
-		
-		//ahora las primary keys son columnas y se gestionan como tales m�s abajo
+		b.append("<standard:Type xmi:id=\"TimeDataType_type\" base_Class=\"TimeDataType\"/>\n");
+		b.append("<standard:Type xmi:id=\"TimestampDataType_type\" base_Class=\"TimestampDataType\"/>\n");
+		b.append("<standard:Type xmi:id=\"DateDataType_type\" base_Class=\"DateDataType\"/>\n");
+		b.append("<standard:Type xmi:id=\"BlobDataType_type\" base_Class=\"BlobDataType\"/>\n");
+		b.append("<standard:Type xmi:id=\"ClobDataType_type\" base_Class=\"ClobDataType\"/>\n");
+
+		//ahora las primary keys son columnas y se gestionan como tales m?s abajo
 		//for (String pk : primaryKeys.keySet()) {
 		//		b.append("<database:primaryKey xmi:id=\""+pk+"_database_primaryKey\" base_Property=\""+pk+"\"/>\n");
 		//}
@@ -287,7 +320,7 @@ public final class Jdbc2uml implements LoginCallback{
 		}
 		for (String prk : profiles.keySet()) {
 			for (String cpk : profiles.get(prk).keySet()) {
-				//Las primary keys son columnas as� que hacemos la substituci�n de clases
+				//Las primary keys son columnas as? que hacemos la substituci?n de clases
 				String prkSpecific=prk;
 				
 				if("column".equals(prk.toLowerCase()) && primaryKeys.get(cpk)!=null) 
@@ -321,6 +354,7 @@ public final class Jdbc2uml implements LoginCallback{
 		b.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		b.append("<xmi:XMI xmi:version=\"20131001\" xmlns:xmi=\"http://www.omg.org/spec/XMI/20131001\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:database=\"http://www.samsarasoftware.net/database.profile\" xmlns:ecore=\"http://www.eclipse.org/emf/2002/Ecore\" xmlns:standard=\"http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard\" xmlns:uml=\"http://www.eclipse.org/uml2/5.0.0/UML\" xsi:schemaLocation=\"http://www.samsarasoftware.net/database.profile platform:/plugin/net.samsarasoftware.metamodels/profiles/database.profile.uml#_0UMZQC_QEeqNRJUKtSQxPw\">\n");
 		b.append("<uml:Model xmi:id=\"jdbc2uml\" name=\"Model\">\n");
+		b.append("<packagedElement xmi:type=\"uml:Component\" xmi:id=\"external-classes\" name=\"external-classes\">");
 		b.append("<packagedElement xmi:type=\"uml:Package\" xmi:id=\"utils\" name=\"utils\">");
 		b.append("<packagedElement xmi:type=\"uml:Class\" xmi:id=\"TimeDataType\" name=\"Time\"/>");
 		b.append("<packagedElement xmi:type=\"uml:Class\" xmi:id=\"TimestampDataType\" name=\"TimeStamp\"/>");
@@ -341,8 +375,9 @@ public final class Jdbc2uml implements LoginCallback{
 		b.append("<packagedElement xmi:type=\"uml:Class\" xmi:id=\"TINYINT\" name=\"TINYINT\"/>");
 		b.append("<packagedElement xmi:type=\"uml:Class\" xmi:id=\"VARBINARY\" name=\"VARBINARY\"/>");
 		b.append("</packagedElement>");
+		b.append("</packagedElement>");
 		b.append("<packagedElement xmi:type=\"uml:Component\" xmi:id=\"subsystem\" name=\"Subsystem\">");
-		b.append("<nestedClassifier xmi:type=\"uml:Component\" xmi:id=\"entities\" name=\"Entities\">");
+		b.append("<nestedClassifier xmi:type=\"uml:Component\" xmi:id=\"entities\" name=\""+USER_ORIGEN+"\">");
 
 		//1
 		if(catalog!=null)
@@ -388,19 +423,17 @@ public final class Jdbc2uml implements LoginCallback{
 				
 				String typeString="";
 				boolean isAttribute=true;
+				Hashtable<String,String> columnProfileAtttributes=new Hashtable<String,String>();
 				
 				if(ex_fk!=null && primaryKeys.get(tableName+"_"+columnName)==null){
 					b.append("<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\""+tableName+"_"+columnName+"\" name=\""+columnName+"\" ");
 					if(!isUmlPrimitiveType(column.DATA_TYPE)){
-						b.append(" type=\""+getType(column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS)+"\" ");
+						b.append(" type=\""+getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes)+"\" ");
 					}else{
 						if(isUmlPrimitiveType(column.DATA_TYPE))
-							typeString=getType(column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS);
+							typeString=getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes);
 					}
-					Hashtable<String,String> columnProfileAtttributes=new Hashtable<String,String>();
-					if(column.COLUMN_SIZE!=null) columnProfileAtttributes.put("size", column.COLUMN_SIZE);
-					if(column.DECIMAL_DIGITS!=null) columnProfileAtttributes.put("decimals", column.DECIMAL_DIGITS);
-					columnProfileAtttributes.put("name", columnName);
+					
 					profiles.get("column").put(tableName+"_"+columnName, columnProfileAtttributes);
 
 				} else if(im_fk!=null  && primaryKeys.get(tableName+"_"+columnName)==null){
@@ -409,7 +442,6 @@ public final class Jdbc2uml implements LoginCallback{
 					b.append("<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\""+tableName+"_"+columnName+"\" name=\""+columnName+"\" ");
 					b.append("type=\""+im_fk.PKTABLE_NAME+"\"  association=\""+im_fk.FK_NAME+"\"");
 					
-					Hashtable<String,String> columnProfileAtttributes=new Hashtable<String,String>();
 					if(column.COLUMN_SIZE!=null) columnProfileAtttributes.put("size", column.COLUMN_SIZE);
 					if(column.DECIMAL_DIGITS!=null) columnProfileAtttributes.put("decimals", column.DECIMAL_DIGITS);
 					columnProfileAtttributes.put("name", columnName);
@@ -418,28 +450,20 @@ public final class Jdbc2uml implements LoginCallback{
 				} else if(im_fk!=null && primaryKeys.get(tableName+"_"+columnName)!=null){
 					b.append("<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\""+tableName+"_"+columnName+"\" name=\""+columnName+"\" ");
 					if(!isUmlPrimitiveType(column.DATA_TYPE)){
-						b.append(" type=\""+getType(column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS)+"\" ");
+						b.append(" type=\""+getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes)+"\" ");
 					}else{
 						if(isUmlPrimitiveType(column.DATA_TYPE))
-							typeString=getType(column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS);
+							typeString=getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes);
 					}
-					Hashtable<String,String> columnProfileAtttributes=new Hashtable<String,String>();
-					if(column.COLUMN_SIZE!=null) columnProfileAtttributes.put("size", column.COLUMN_SIZE);
-					if(column.DECIMAL_DIGITS!=null) columnProfileAtttributes.put("decimals", column.DECIMAL_DIGITS);
-					columnProfileAtttributes.put("name", columnName);
 					profiles.get("column").put(tableName+"_"+columnName, columnProfileAtttributes);
 				}else if(!columnName.equals(DTYPE)){
 					b.append("<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\""+tableName+"_"+columnName+"\" name=\""+columnName+"\" ");
 					if(!isUmlPrimitiveType(column.DATA_TYPE)){
-						b.append(" type=\""+getType(column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS)+"\" ");
+						b.append(" type=\""+getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes)+"\" ");
 					}else{
 						if(isUmlPrimitiveType(column.DATA_TYPE))
-							typeString=getType(column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS);
+							typeString=getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes);
 					}
-					Hashtable<String,String> columnProfileAtttributes=new Hashtable<String,String>();
-					if(column.COLUMN_SIZE!=null) columnProfileAtttributes.put("size", column.COLUMN_SIZE);
-					if(column.DECIMAL_DIGITS!=null) columnProfileAtttributes.put("decimals", column.DECIMAL_DIGITS);
-					columnProfileAtttributes.put("name", columnName);
 					profiles.get("column").put(tableName+"_"+columnName, columnProfileAtttributes);
 				}else{
 					isAttribute=false;
@@ -599,15 +623,18 @@ public final class Jdbc2uml implements LoginCallback{
 	}
 
 
-	private String getType(String DATA_TYPE, String COLUMN_SIZE,String DECIMAL_DIGITS) throws SQLException {
+	private String getType(String columnName,String DATA_TYPE, String COLUMN_SIZE,String DECIMAL_DIGITS, Hashtable<String, String> columnProfileAtttributes) throws SQLException {
 		StringBuffer out=new StringBuffer();
 		
 		switch(Integer.parseInt(DATA_TYPE)){
 			case Types.ARRAY:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
+				columnProfileAtttributes.put("name", columnName);
 				out.append("ARRAY");
 				break;
 			case Types.BIGINT:
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural\"/>");
 				break;
 			case Types.BINARY:
@@ -615,18 +642,22 @@ public final class Jdbc2uml implements LoginCallback{
 				out.append("BINARY");
 				break;
 			case Types.BIT:
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean\"/>");
 				break;
 			case Types.BLOB:
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("BlobDataType");
 				break;
 			case Types.BOOLEAN:
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean\"/>");
 				break;
 			case Types.CHAR:
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\"/>");
 				break;
 			case Types.CLOB:
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("ClobDataType");
 				break;
 			case Types.DATE:
@@ -637,41 +668,48 @@ public final class Jdbc2uml implements LoginCallback{
 					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural\"/>");
 				else
 					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real\"/>");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
+				if(DECIMAL_DIGITS!=null) columnProfileAtttributes.put("decimals", DECIMAL_DIGITS);
 				break;
 			case Types.DISTINCT:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("DISTINCT");
 				break;
 			case Types.DOUBLE:
-				if(DECIMAL_DIGITS!=null && DECIMAL_DIGITS.equals(new BigDecimal(0)))
-					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural\"/>");
-				else
 					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real\"/>");
+					//if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
+					columnProfileAtttributes.put("decimals","15"); // adoptado segun https://en.wikipedia.org/wiki/Double-precision_floating-point_format
 				break;
 			case Types.FLOAT:
-				if(DECIMAL_DIGITS!=null && DECIMAL_DIGITS.equals(new BigDecimal(0)))
-					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural\"/>");
-				else
 					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real\"/>");
+					//if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
+					columnProfileAtttributes.put("decimals","7"); // adoptado segun https://en.wikipedia.org/wiki/Single-precision_floating-point_format
 				break;
 			case Types.INTEGER:
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer\"/>");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.LONGNVARCHAR:
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\"/>");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.LONGVARBINARY:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("LONGVARBINARY");
 				break;
 			case Types.LONGVARCHAR:
 				out.append("ClobDataType");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.NCHAR:
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\"/>");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.NCLOB:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("NCLOB");
 				break;
 			case Types.NUMERIC:
@@ -679,31 +717,35 @@ public final class Jdbc2uml implements LoginCallback{
 					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural\"/>");
 				else
 					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real\"/>");
-
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
+				if(DECIMAL_DIGITS!=null) columnProfileAtttributes.put("decimals", DECIMAL_DIGITS);
 				break;
 			case Types.NVARCHAR:
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\"/>");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.OTHER:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("OTHER");
 				break;
 			case Types.REAL:
-				if(DECIMAL_DIGITS!=null && DECIMAL_DIGITS.equals(new BigDecimal(0)))
-					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural\"/>");
-				else
 					out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real\"/>");
+					columnProfileAtttributes.put("decimals","7"); // adoptado segun https://en.wikipedia.org/wiki/Single-precision_floating-point_format
 				break;
 			case Types.REF:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
 				out.append("REF");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.ROWID:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
 				out.append("ROWID");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.SMALLINT:
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer\"/>");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.TIME:
 				out.append("TimeDataType");
@@ -714,13 +756,16 @@ public final class Jdbc2uml implements LoginCallback{
 			case Types.TINYINT:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);				
 				out.append("TINYINT");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			case Types.VARBINARY:
 				log.error("Unsupported SQL Type: "+DATA_TYPE);
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				out.append("VARBINARY");
 				break;
 			case Types.VARCHAR:
 				out.append("<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\"/>");
+				if(COLUMN_SIZE!=null) columnProfileAtttributes.put("size", COLUMN_SIZE);
 				break;
 			default:
 				throw new SQLException("Unknown SQL Type: "+DATA_TYPE);
@@ -920,5 +965,8 @@ public final class Jdbc2uml implements LoginCallback{
 			 return null;
 		else
 			return conversor.convert(sourceObject, targetClass);
- 	}	
+ 	}
+	
+	
+	
 }
