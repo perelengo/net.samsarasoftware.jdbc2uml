@@ -424,6 +424,7 @@ public Jdbc2uml(String[] args) throws Exception{
 				String typeString="";
 				boolean isAttribute=true;
 				Hashtable<String,String> columnProfileAtttributes=new Hashtable<String,String>();
+
 				
 				if(ex_fk!=null && primaryKeys.get(tableName+"_"+columnName)==null){
 					b.append("<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\""+tableName+"_"+columnName+"\" name=\""+columnName+"\" ");
@@ -433,7 +434,7 @@ public Jdbc2uml(String[] args) throws Exception{
 						if(isUmlPrimitiveType(column.DATA_TYPE))
 							typeString=getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes);
 					}
-					
+					columnProfileAtttributes.put("name", columnName);
 					profiles.get("column").put(tableName+"_"+columnName, columnProfileAtttributes);
 
 				} else if(im_fk!=null  && primaryKeys.get(tableName+"_"+columnName)==null){
@@ -464,6 +465,7 @@ public Jdbc2uml(String[] args) throws Exception{
 						if(isUmlPrimitiveType(column.DATA_TYPE))
 							typeString=getType(columnName,column.DATA_TYPE, column.COLUMN_SIZE, column.DECIMAL_DIGITS,columnProfileAtttributes);
 					}
+					columnProfileAtttributes.put("name", columnName);
 					profiles.get("column").put(tableName+"_"+columnName, columnProfileAtttributes);
 				}else{
 					isAttribute=false;
